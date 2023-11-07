@@ -30,6 +30,7 @@ public class IA_Enemies : MonoBehaviour
     {
         if (isAlive)
         {
+            isAlive = false;
             anim.SetTrigger("Kill");
         }
     }
