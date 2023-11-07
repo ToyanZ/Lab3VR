@@ -10,30 +10,34 @@ public class Weapon : MonoBehaviour
     public Projectile projectile;
     public Transform tip;
     public Transform center;
-    public InputActionReference shootInputAction;
-    float fireRateCount=0;
 
     [Space(20)]
-    public float shootForce = 40;
-    public float fireRate = 0.02f;
+    [SerializeField] private float shootForce = 40;
+    [SerializeField] private float fireRate = 0.02f;
 
-    private void Update()
+    private float fireRateCount=0;
+    private bool shooting = false;
+    
+    public void Shoot()
     {
-        if (shootInputAction.action.IsPressed()) Shoot();
-
+        if(!shooting) StartCoroutine(ShootIE());
     }
 
-    void Shoot()
+    IEnumerator ShootIE()
     {
-        fireRateCount += Time.deltaTime;
-        if (fireRateCount < fireRate) return;
-        fireRateCount = 0;
+        shooting = true;
+
 
         Projectile bullet = Instantiate(projectile, tip.position, Quaternion.identity);
-        
+
         Vector3 direction = (tip.position - center.position);
         Vector3 force = direction.normalized * shootForce;
 
         bullet.rb.AddForce(force, ForceMode.Impulse);
+
+        yield return new WaitForSeconds(fireRate);
+        
+        
+        shooting = false;
     }
 }

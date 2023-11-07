@@ -5,18 +5,27 @@ using UnityEngine.InputSystem;
 
 public class InterfaceManager : MonoBehaviour
 {
-    public RectTransform pauseMenu;
-    public InputActionReference pauseInputAction;
+    public static InterfaceManager instance;
     
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private RectTransform pauseMenu;
+    
+
+    private void Awake()
     {
-        
+        if(instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PauseMenu()
     {
-        if(pauseInputAction.action.WasPressedThisFrame()) pauseMenu.gameObject.SetActive(!pauseMenu.gameObject.activeSelf);
+        pauseMenu.gameObject.SetActive(!pauseMenu.gameObject.activeSelf);
     }
+
 }

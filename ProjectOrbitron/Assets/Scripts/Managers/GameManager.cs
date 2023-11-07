@@ -9,8 +9,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameState state;
 
-    public GameObject deviceSimulator;
+    [Space(10)]
     public bool useSimulator;
+    [SerializeField] private GameObject deviceSimulator;
 
     private void Awake()
     {
