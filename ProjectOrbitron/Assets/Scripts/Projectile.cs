@@ -40,6 +40,11 @@ public class Projectile : MonoBehaviour
         {
 
         }
+
+        if(collision.gameObject.GetComponent<IA_Enemies>() != null)
+        {
+            collision.gameObject.GetComponent<IA_Enemies>().KillEnemy();
+        }
         
         Destroy(gameObject, activeTime);
 
