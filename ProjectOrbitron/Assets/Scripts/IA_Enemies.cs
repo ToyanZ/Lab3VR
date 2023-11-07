@@ -30,7 +30,9 @@ public class IA_Enemies : MonoBehaviour
     {
         if (isAlive)
         {
-            anim.SetTrigger("Kill");
+            isAlive = false;
+            anim.SetTrigger("Death");
+            enemy.speed = 0;
         }
     }
 }
