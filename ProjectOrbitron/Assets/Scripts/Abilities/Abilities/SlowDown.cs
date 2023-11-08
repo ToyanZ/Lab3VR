@@ -4,16 +4,40 @@ using UnityEngine;
 
 public class SlowDown : Ability
 {
+    public List<IA_Enemies> currentEnemies;
+
+    public override void InvokeAbility()
+    {
+        currentEnemies = new List<IA_Enemies>();
+        rigidBody.velocity = Vector3.zero;
+        rigidBody.isKinematic = true;
+    }
+
     public override void Activate()
     {
         foreach(Target target in receiver)
         {
-            IA_Enemies d = null;
+            IA_Enemies d;
             if(target.gameObject.TryGetComponent<IA_Enemies>(out d))
             {
-                //d.enemy.speed = d.enemy.speed / 4;
-                d.KillEnemy();
+                if (!currentEnemies.Contains(d))
+                {
+                    currentEnemies.Add(d);
+                    d.enemy.speed /= 4;
+                    print(1);
+                }
             }
         }
     }
+
+    public override void Deactivate()
+    {
+        foreach(IA_Enemies enemy in currentEnemies)
+        {
+            enemy.enemy.speed *= 4;
+            print(enemy.enemy.speed);
+        }
+        base.Deactivate();
+    }
+
 }

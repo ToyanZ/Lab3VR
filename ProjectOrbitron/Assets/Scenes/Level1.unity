@@ -4984,7 +4984,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onDataUpdatedEventsPrivate: []
   sender: {fileID: 1901013499}
-  ability: {fileID: 282516885096967866, guid: 360bbc22935067c428dc30db40272bb9, type: 3}
+  ability: {fileID: 8012773491305424910, guid: 943cf986be67f2c4d8812a29d3d6c5e1, type: 3}
   tip: {fileID: 601935634}
   center: {fileID: 1337688280}
   shootForce: 40

@@ -18,7 +18,7 @@ public abstract class Ability : MonoBehaviour
     float operativeTime = 0;
     float latentTime = 0;
 
-    //public abstract void InvokeAbility();
+    public virtual void InvokeAbility() {  ;}
     //public abstract void Deploy();
     public abstract void Activate();
     public virtual void Deactivate() { Destroy(gameObject); }

@@ -48,7 +48,6 @@ public class Weapon : AbilityController
         RealoadUpdate();
         FireRateUpdate();
         if (CanShoot()) LaunchProjectile(direction);
-        print("XD");
     }
 
     public void Shoot()

@@ -18,13 +18,6 @@ public class Projectile : Ability
             {
                 if (target == null) continue;
                 target.TakeDamage(damage);
-
-                //IA_Enemies d = null;
-                //if (target.gameObject.TryGetComponent<IA_Enemies>(out d))
-                //{
-                //    //d.enemy.speed = d.enemy.speed / 4;
-                //    d.KillEnemy();
-                //}
             }
         } catch (Exception e) { }
         gameObject.SetActive(false);
