@@ -23,13 +23,14 @@ public class IA_Enemies : MonoBehaviour
         if(isAlive) 
         {
             enemy.SetDestination(Player.position);
-
+            Debug.Log("Esta vivo");
         }
     }
     public void KillEnemy()
     {
         if (isAlive)
         {
+            Debug.Log("Mata al enemigo");
             isAlive = false;
             anim.SetTrigger("Death");
             enemy.speed = 0;
