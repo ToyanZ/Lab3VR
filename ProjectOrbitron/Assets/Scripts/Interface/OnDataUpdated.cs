@@ -10,6 +10,7 @@ public class OnDataUpdated
     public int statIndex;
     public UnityEvent<InterfaceData> Event;
 
+    //Constructor
     public OnDataUpdated(string name, int statIndex, UnityEvent<InterfaceData> unityEvent)
     {
         this.name = name;

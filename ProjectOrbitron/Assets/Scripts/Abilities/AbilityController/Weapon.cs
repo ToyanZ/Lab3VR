@@ -12,7 +12,6 @@ public class Weapon : AbilityController
     [Space(20)]
     public Transform tip;
     public Transform center;
-    public Projectile projectile;
     
     [Space(20)]
     public float shootForce = 100;
@@ -69,7 +68,7 @@ public class Weapon : AbilityController
 
     void LaunchProjectile(Vector3 direction)
     {
-        Projectile clone = Instantiate(projectile, tip.position, Quaternion.identity);
+        Ability clone = Instantiate(ability, tip.position, Quaternion.identity);
         clone.sender = sender;
         clone.rigidBody.AddForce(direction.normalized * shootForce, ForceMode.Impulse);
         GetStat(WeaponStat.Ammo).current -= 1;

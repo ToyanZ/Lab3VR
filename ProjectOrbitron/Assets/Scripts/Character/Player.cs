@@ -10,12 +10,12 @@ public class Player : MonoBehaviour
 {
     public Target target;
     public Weapon weapon;
-    public PlayerInput playerInput;
+    //public PlayerInput playerInput;
     
     [Space(20)]
-    public Rigidbody2D rb;
-    public Camera cam;
-    public float speedMod = 0;
+    //public Rigidbody2D rb;
+    //public Camera cam;
+    //public float speedMod = 0;
 
     [Space(20)]
     public InputActionReference moveInputAction;
@@ -86,13 +86,13 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
-    {
-        if (direction != Vector2.zero)
-        {
-            rb.velocity = direction * (speed + speedMod) * Time.fixedDeltaTime;
-        }
-    }
+    //private void FixedUpdate()
+    //{
+    //    if (direction != Vector2.zero)
+    //    {
+    //        rb.velocity = direction * (speed + speedMod) * Time.fixedDeltaTime;
+    //    }
+    //}
 
 
 

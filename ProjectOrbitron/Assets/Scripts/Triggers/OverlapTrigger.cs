@@ -64,7 +64,6 @@ public class OverlapTrigger : Trigger
         Target target = collision.GetComponent<Target>();
         if (target != null)
         {
-            print("5");
             if (!targets.Contains(target)) targets.Add(target);
             DataUpdate(this, ToIndex(Type.Enter.ToString()));
             load = 0;

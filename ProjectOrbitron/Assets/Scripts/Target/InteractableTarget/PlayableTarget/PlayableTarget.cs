@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class PlayableTarget : InteractableTarget
 {
-    public enum DieMode { Destroy, Deactivate}
+    public enum DieMode { None, Destroy, Deactivate}
     public DieMode dieMode = DieMode.Deactivate;
     public float GetMaxHealth()
     {

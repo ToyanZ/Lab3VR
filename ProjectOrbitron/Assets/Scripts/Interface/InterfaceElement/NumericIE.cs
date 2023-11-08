@@ -42,10 +42,24 @@ public class NumericIE : InterfaceElement
 
                 break;
             case TitleFormat.UseAssigned:
-                titleText.text = title;
+                if(titleText == null)
+                {
+                    print("No title text assigned on interface element");
+                }
+                else
+                {
+                    titleText.text = title;
+                }
                 break;
             case TitleFormat.GetFromInterfaceData:
-                titleText.text = interfaceData.GetDisplayValue();
+                if (titleText == null)
+                {
+                    print("No title text assigned on interface element");
+                }
+                else
+                {
+                    titleText.text = interfaceData.GetDisplayValue();
+                }
                 break;
         }
 
@@ -69,7 +83,11 @@ public class NumericIE : InterfaceElement
 
         maxValue = interfaceData.GetMaxValue();
         currentValue = interfaceData.GetCurrentValue();
-        
+
+        if (currentValueText == null) return;
+        if (maxValueText == null) return;
+
+
         float pctValue = 0.0f;
         float currentValueMod = 0;
         switch (roundingMode)
@@ -87,6 +105,9 @@ public class NumericIE : InterfaceElement
                 currentValueMod = currentValue;
                 break;
         }
+
+        
+
 
         if (replaceCurrentWithTitleOnZero && currentValueMod == 0)
         {

@@ -194,7 +194,7 @@ MonoBehaviour:
   sender: {fileID: 0}
   rigidBody: {fileID: 3640657437192575298}
   receiver: []
-  damage: 10
+  damage: 20
 --- !u!54 &3640657437192575298
 Rigidbody:
   m_ObjectHideFlags: 0
