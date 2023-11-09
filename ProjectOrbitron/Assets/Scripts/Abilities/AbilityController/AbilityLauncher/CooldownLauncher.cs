@@ -24,7 +24,7 @@ public class CooldownLauncher : AbilityLauncher
 
     IEnumerator LaunchIE()
     {
-        Ability clone = Instantiate(ability, (Vector2)sender.transform.position + Vector2.one, Quaternion.identity);
+        Ability clone = Instantiate(abilities[0], (Vector2)sender.transform.position + Vector2.one, Quaternion.identity);
         cooldown = cooldownTime;
         while(cooldown > 0)
         {

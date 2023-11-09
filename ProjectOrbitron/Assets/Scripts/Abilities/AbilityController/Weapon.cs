@@ -20,17 +20,19 @@ public class Weapon : AbilityController
         new Stat(Stat.Type.Number, WeaponStat.Ammo.ToString(), 40, 40, true, "ammo"),
         new Stat(Stat.Type.Number, WeaponStat.FireRate.ToString(), 0, 0.02f, true, "fireRate"),
         new Stat(Stat.Type.Number, WeaponStat.Reload.ToString(), 0, 1.5f, true, "reload"),
-        new Stat(Stat.Type.Number, WeaponStat.Spread.ToString(), 0, 0, false, "spread")
+        new Stat(Stat.Type.Number, WeaponStat.Spread.ToString(), 0, 0, false, "spread"),
+        new Stat(Stat.Type.Number, "AbilityIndex", 0, 0, false, "abilityIndex")
     };
     public float recoil = 0;
 
     [Space(20)]
     public List<OnDataUpdated> onDataUpdatedEvents = new List<OnDataUpdated>
     {
-        new OnDataUpdated(WeaponStat.Ammo.ToString(), 0, new UnityEvent<InterfaceData>())
+        new OnDataUpdated(WeaponStat.Ammo.ToString(), 0, new UnityEvent<InterfaceData>()),
+        new OnDataUpdated("AbilityChanged", 4, new UnityEvent<InterfaceData>())
     };
 
-
+    private int lastIndex = 0;
     private void Start()
     {
         Stat ammo = GetStat(WeaponStat.Ammo);
@@ -41,7 +43,22 @@ public class Weapon : AbilityController
         Stat fireRate = GetStat(WeaponStat.FireRate);
         fireRate.current = 0;
         onDataUpdatedEventsPrivate = onDataUpdatedEvents;
+
+        stats[4].max = abilities.Count - 1;
+        lastIndex = currentAbilityIndex;
     }
+
+    private void Update()
+    {
+        if(lastIndex != currentAbilityIndex)
+        {
+            lastIndex = currentAbilityIndex;
+            DataUpdate(this, 1);
+        }
+    }
+
+
+
 
     public void Shoot(Vector2 direction)
     {
@@ -67,7 +84,7 @@ public class Weapon : AbilityController
 
     void LaunchProjectile(Vector3 direction)
     {
-        Ability clone = Instantiate(ability, tip.position, Quaternion.identity);
+        Ability clone = Instantiate(abilities[currentAbilityIndex], tip.position, Quaternion.identity);
         clone.sender = sender;
         clone.rigidBody.AddForce(direction.normalized * shootForce, ForceMode.Impulse);
         GetStat(WeaponStat.Ammo).current -= 1;

@@ -30,6 +30,9 @@ public class Player : MonoBehaviour
     public InputActionReference pauseInputActionSim;
     public InputActionReference pauseInputAction;
 
+    [Space(20)]
+    public InputActionReference switchInputActionSim;
+    public InputActionReference switchInputAction;
 
     Vector2 direction;
     float speed;
@@ -78,11 +81,13 @@ public class Player : MonoBehaviour
         {
             //if (pauseInputAction.action.WasPressedThisFrame()) InterfaceManager.instance.PauseMenu();
             if (shootInputAction.action.WasPressedThisFrame()) weapon.Shoot();
+            if (switchInputAction.action.WasPressedThisFrame()) weapon.Shoot();
         }
         else
         {
             //if (pauseInputActionSim.action.WasPressedThisFrame()) InterfaceManager.instance.PauseMenu();
             if (shootInputActionSim.action.WasPressedThisFrame()) weapon.Shoot();
+            if (switchInputActionSim.action.WasPressedThisFrame()) weapon.NextAbility();
         }
     }
 

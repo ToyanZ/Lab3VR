@@ -3749,6 +3749,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7696548424635294051, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.273
+      objectReference: {fileID: 0}
     - target: {fileID: 9014170783809206330, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_ClearFlags
       value: 1
@@ -5649,7 +5653,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2844583817118425547, guid: f227d2652b6c5d24891cf5b353e58a84, type: 3}
       propertyPath: useSimulator
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2844583817118425547, guid: f227d2652b6c5d24891cf5b353e58a84, type: 3}
       propertyPath: deviceSimulator

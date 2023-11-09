@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -25,5 +26,10 @@ public abstract class InterfaceData : MonoBehaviour
             Debug.Log("Index [" + eventIndex + "] out of range on " + name + " events");
         }
         
+    }
+
+    public void Print(string s)
+    {
+        Debug.Log(s);
     }
 }

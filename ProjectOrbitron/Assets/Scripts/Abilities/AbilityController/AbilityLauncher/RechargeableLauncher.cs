@@ -18,7 +18,7 @@ public class RechargeableLauncher : AbilityLauncher
     private void Start()
     {
         onDataUpdatedEventsPrivate = onDataUpdatedEvents;
-        clone = Instantiate(ability);
+        clone = Instantiate(abilities[0]);
     }
     public override void Launch()
     {

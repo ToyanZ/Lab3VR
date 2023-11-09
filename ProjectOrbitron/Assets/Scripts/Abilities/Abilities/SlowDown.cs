@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SlowDown : Ability
 {
-    public List<IA_Enemies> currentEnemies;
+    List<IA_Enemies> currentEnemies;
 
     public override void InvokeAbility()
     {
@@ -24,7 +24,6 @@ public class SlowDown : Ability
                 {
                     currentEnemies.Add(d);
                     d.enemy.speed /= 4;
-                    print(1);
                 }
             }
         }
@@ -35,7 +34,6 @@ public class SlowDown : Ability
         foreach(IA_Enemies enemy in currentEnemies)
         {
             enemy.enemy.speed *= 4;
-            print(enemy.enemy.speed);
         }
         base.Deactivate();
     }

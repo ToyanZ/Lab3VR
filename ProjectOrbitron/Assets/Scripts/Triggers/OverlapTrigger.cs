@@ -128,5 +128,8 @@ public class OverlapTrigger : Trigger
     public override bool GetBoolValue() { return false; }
     public override string GetDisplayValue() { return name; }
 
-    
+    public void LogUpdate()
+    {
+        print("happening");
+    }
 }
