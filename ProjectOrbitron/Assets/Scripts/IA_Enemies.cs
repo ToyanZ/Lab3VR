@@ -20,7 +20,7 @@ public class IA_Enemies : MonoBehaviour
 
     private void Update()
     {
-        if(isAlive) 
+        if(isAlive && Player != null) 
         {
             enemy.SetDestination(Player.position);
         }
@@ -29,6 +29,7 @@ public class IA_Enemies : MonoBehaviour
     {
         if (isAlive)
         {
+            WavesManager.instance.remainingEnemies--;
             isAlive = false;
             anim.SetTrigger("Death");
             enemy.speed = 0;

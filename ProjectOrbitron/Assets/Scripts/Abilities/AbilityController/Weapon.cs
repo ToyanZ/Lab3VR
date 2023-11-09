@@ -44,7 +44,9 @@ public class Weapon : AbilityController
         fireRate.current = 0;
         onDataUpdatedEventsPrivate = onDataUpdatedEvents;
 
-        stats[4].max = abilities.Count - 1;
+                        //NO OLVIDAR!!
+
+        //stats[4].max = abilities.Count - 1;
         lastIndex = currentAbilityIndex;
     }
 
