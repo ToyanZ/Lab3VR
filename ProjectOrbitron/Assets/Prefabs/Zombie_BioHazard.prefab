@@ -1723,7 +1723,7 @@ MonoBehaviour:
   - displayName: health
     type: 0
     current: 0
-    max: 200
+    max: 100
     boolValue: 0
     stringValue: health
   rigidBody: {fileID: 8708079117287804467}

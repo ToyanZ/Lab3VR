@@ -34,6 +34,15 @@ public class Player : MonoBehaviour
     public InputActionReference switchInputActionSim;
     public InputActionReference switchInputAction;
 
+
+    [Space(20)]
+    public InputActionReference holdInputActionSim;
+    public InputActionReference holdInputAction;
+
+    public bool pressing = false;
+
+
+
     Vector2 direction;
     float speed;
     //[HideInInspector] public PlayerInputActions inputActions;
@@ -88,7 +97,11 @@ public class Player : MonoBehaviour
             //if (pauseInputActionSim.action.WasPressedThisFrame()) InterfaceManager.instance.PauseMenu();
             if (shootInputActionSim.action.WasPressedThisFrame()) weapon.Shoot();
             if (switchInputActionSim.action.WasPressedThisFrame()) weapon.NextAbility();
+            pressing = holdInputActionSim.action.IsPressed();
         }
+
+
+
     }
 
     //private void FixedUpdate()
