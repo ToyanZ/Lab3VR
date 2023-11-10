@@ -12,6 +12,8 @@ public class Weapon : AbilityController
     [Space(20)]
     public Transform tip;
     public Transform center;
+    [SerializeField] private Vector3 aimDirection = Vector3.zero;
+    public float aimAngle = 0;
     
     [Space(20)]
     public float shootForce = 100;
@@ -57,10 +59,16 @@ public class Weapon : AbilityController
             lastIndex = currentAbilityIndex;
             DataUpdate(this, 1);
         }
+
+        aimDirection = (tip.position - center.position).normalized;
+
     }
 
 
-
+    public Vector3 GetAimDirection()
+    {
+        return aimDirection;
+    }
 
     public void Shoot(Vector2 direction)
     {

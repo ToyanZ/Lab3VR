@@ -41,8 +41,11 @@ public class WavesManager : SpawnEnemies
         {
             currentTime = currentTime - Time.deltaTime;
             remainingTimeTEXT.text = "" + currentTime.ToString("0.0");
-        }else if(inWave) 
+        }else if(inWave)
+        {
             light.SetActive(false);
+            remainingTimeTEXT.text = "";
+        }
     }
 
     IEnumerator LoadNewWave()
