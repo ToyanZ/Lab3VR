@@ -97,7 +97,7 @@ public class Player : MonoBehaviour
             //if (pauseInputActionSim.action.WasPressedThisFrame()) InterfaceManager.instance.PauseMenu();
             if (shootInputActionSim.action.WasPressedThisFrame()) weapon.Shoot();
             if (switchInputActionSim.action.WasPressedThisFrame()) weapon.NextAbility();
-            pressing = holdInputActionSim.action.IsPressed();
+            //pressing = holdInputActionSim.action.IsPressed();
         }
 
 
