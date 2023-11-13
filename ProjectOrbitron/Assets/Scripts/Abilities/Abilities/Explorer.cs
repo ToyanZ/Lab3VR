@@ -4,25 +4,59 @@ using UnityEngine;
 
 public class Explorer : Ability
 {
+
     public float speed = 40;
     Player player;
     Vector3 currentDirection;
 
+    bool triggered = false;
     public override void InvokeAbility()
+    {
+        
+    }
+
+    private void Start()
     {
         player = sender.GetComponent<Player>();
         currentDirection = player.weapon.GetAimDirection();
+        StartCoroutine(Travel());
+    }
+
+    IEnumerator Travel()
+    {
+        while (!triggered)
+        {
+            if (player.pressing)
+            {
+                rigidBody.velocity = player.weapon.GetAimDirection().normalized * speed;
+                print("A");
+            }
+            else
+            {
+                rigidBody.velocity = rigidBody.velocity.normalized * speed;
+                print("B");
+            }
+            yield return null;
+        }
+        
     }
 
     public override void Activate()
     {
-        if (player.pressing)
+        triggered = true;
+
+        foreach (Target target in receiver)
         {
-            rigidBody.velocity = player.weapon.GetAimDirection() * speed;
+            DynamicTarget targetDynamic = target as DynamicTarget;
+
+            if (targetDynamic == null) continue;
+            targetDynamic.TakeDamage(10);
+
         }
-        else
-        {
-            rigidBody.velocity = rigidBody.velocity.normalized * speed;
-        }
+    }
+
+    public override void Deactivate()
+    {
+        base.Deactivate();
     }
 }

@@ -6,9 +6,45 @@
             "id": "e3017747-c732-42eb-ac04-fc1f15d78952",
             "actions": [
                 {
-                    "name": "Shoot",
+                    "name": "Trigger",
                     "type": "Button",
                     "id": "df88f0ab-8410-4272-80d4-f54c1eceae38",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Thumbstick",
+                    "type": "Value",
+                    "id": "28d5de8d-837b-4c7a-8368-79ed0318b798",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Grip",
+                    "type": "Button",
+                    "id": "93752df3-42ef-456e-94d6-61974aee1eca",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PrimaryButton",
+                    "type": "Button",
+                    "id": "e0caec0e-794d-443d-b3b6-a125442c2d02",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SecondaryButton",
+                    "type": "Button",
+                    "id": "7059f417-efb0-424b-8a3e-8adaed251175",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -23,7 +59,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "VRController",
-                    "action": "Shoot",
+                    "action": "Trigger",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -34,7 +70,68 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardAndMouse",
-                    "action": "Shoot",
+                    "action": "Trigger",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d64a1bd6-d99b-4056-abae-39c902038672",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "VRController",
+                    "action": "Grip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "06927fcd-c619-425f-b576-5dac0dfaddff",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "VRController",
+                    "action": "PrimaryButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "319eae16-9403-45fd-8a20-827c6191411f",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "VRController",
+                    "action": "SecondaryButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "GUIInteraction",
+            "id": "a5a04b60-bf70-4099-8e02-9c98ae20cc1c",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "1cca65ee-9ee6-4053-b3eb-fca50980803a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "8905a44f-d68a-4ae8-b342-9da5848c4a58",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "VRController",
+                    "action": "New action",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -64,6 +161,28 @@
             "devices": [
                 {
                     "devicePath": "<XRController>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Gamepad",
+            "bindingGroup": "Gamepad",
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Joystick",
+            "bindingGroup": "Joystick",
+            "devices": [
+                {
+                    "devicePath": "<Joystick>",
                     "isOptional": false,
                     "isOR": false
                 }

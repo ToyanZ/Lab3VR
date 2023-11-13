@@ -43,6 +43,9 @@ public class Player : MonoBehaviour
 
 
 
+    [Space(20)]
+    public InputControls inputActions;
+
     Vector2 direction;
     float speed;
     //[HideInInspector] public PlayerInputActions inputActions;
@@ -90,17 +93,16 @@ public class Player : MonoBehaviour
         {
             //if (pauseInputAction.action.WasPressedThisFrame()) InterfaceManager.instance.PauseMenu();
             if (shootInputAction.action.WasPressedThisFrame()) weapon.Shoot();
-            if (switchInputAction.action.WasPressedThisFrame()) weapon.Shoot();
+            pressing = holdInputAction.action.IsPressed();
+            //if (switchInputAction.action.WasPressedThisFrame()) weapon.Shoot();
         }
         else
         {
             //if (pauseInputActionSim.action.WasPressedThisFrame()) InterfaceManager.instance.PauseMenu();
             if (shootInputActionSim.action.WasPressedThisFrame()) weapon.Shoot();
-            if (switchInputActionSim.action.WasPressedThisFrame()) weapon.NextAbility();
-            //pressing = holdInputActionSim.action.IsPressed();
+            //if (switchInputActionSim.action.WasPressedThisFrame()) weapon.NextAbility();
+            pressing = holdInputActionSim.action.IsPressed();
         }
-
-
 
     }
 
@@ -113,8 +115,5 @@ public class Player : MonoBehaviour
     //}
 
 
-
-    
-    
-
 }
+

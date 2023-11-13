@@ -18,7 +18,7 @@ public class DynamicTarget : PlayableTarget
     public List<OnDataUpdated> onDataUpdatedEvents = new List<OnDataUpdated>
     {
         new OnDataUpdated("HealthUpdated", 0, new UnityEvent<InterfaceData>()),
-        new OnDataUpdated("TargetDead", 1, new UnityEvent<InterfaceData>())
+        new OnDataUpdated("TargetDead", 0, new UnityEvent<InterfaceData>())
     };
 
     private void Start()
@@ -37,7 +37,7 @@ public class DynamicTarget : PlayableTarget
         {
             rest = damageAmount - stats[0].current;
             stats[0].current = 0;
-            DataUpdate(this, 1);
+            DataUpdate(this, 0);
 
             switch (dieMode)
             {
