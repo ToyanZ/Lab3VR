@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Explorer : Ability
 {
-
+    public float dieTime = 3;
     public float speed = 40;
     Player player;
     Vector3 currentDirection;
@@ -20,7 +20,15 @@ public class Explorer : Ability
         player = sender.GetComponent<Player>();
         currentDirection = player.weapon.GetAimDirection();
         StartCoroutine(Travel());
+        StartCoroutine(Die());
     }
+
+    IEnumerator Die()
+    {
+        yield return new WaitForSeconds(dieTime);
+        Destroy(gameObject);
+    }
+
 
     IEnumerator Travel()
     {

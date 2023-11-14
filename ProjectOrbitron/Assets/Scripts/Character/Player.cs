@@ -8,32 +8,19 @@ using System.Security.Cryptography;
 
 public class Player : MonoBehaviour
 {
-    public Target target;
-    public Weapon weapon;
     //public PlayerInput playerInput;
-    
-    [Space(20)]
+    //[Space(20)]
     //public Rigidbody2D rb;
     //public Camera cam;
     //public float speedMod = 0;
-
-    [Space(20)]
-    public InputActionReference moveInputAction;
-    public InputActionReference rotationInputAction;
     //public InputActionReference shootInputAction;
+    
+    public Target target;
+    public Weapon weapon;
 
     [Space(20)]
     public InputActionReference shootInputActionSim;
     public InputActionReference shootInputAction;
-
-    [Space(20)]
-    public InputActionReference pauseInputActionSim;
-    public InputActionReference pauseInputAction;
-
-    [Space(20)]
-    public InputActionReference switchInputActionSim;
-    public InputActionReference switchInputAction;
-
 
     [Space(20)]
     public InputActionReference holdInputActionSim;
@@ -83,7 +70,7 @@ public class Player : MonoBehaviour
     //}
 
 
-    
+    private bool shooting = false;
     private void Update()
     {
         //Rotate();
@@ -91,20 +78,22 @@ public class Player : MonoBehaviour
         //Shoot();
         if (!GameManager.instance.useSimulator)
         {
-            //if (pauseInputAction.action.WasPressedThisFrame()) InterfaceManager.instance.PauseMenu();
-            if (shootInputAction.action.WasPressedThisFrame()) weapon.Shoot();
+            shooting = shootInputAction.action.IsPressed(); 
             pressing = holdInputAction.action.IsPressed();
-            //if (switchInputAction.action.WasPressedThisFrame()) weapon.Shoot();
         }
         else
         {
-            //if (pauseInputActionSim.action.WasPressedThisFrame()) InterfaceManager.instance.PauseMenu();
-            if (shootInputActionSim.action.WasPressedThisFrame()) weapon.Shoot();
-            //if (switchInputActionSim.action.WasPressedThisFrame()) weapon.NextAbility();
+            shooting = shootInputActionSim.action.IsPressed();
             pressing = holdInputActionSim.action.IsPressed();
         }
 
     }
+
+    private void FixedUpdate()
+    {
+        if (shooting) weapon.Shoot();
+    }
+
 
     //private void FixedUpdate()
     //{
