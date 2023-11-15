@@ -6,6 +6,7 @@ public class CooldownLauncher : AbilityLauncher
 {
     public float cooldownTime = 4;
     public float cooldown = 0;
+    public float cooldownMod = 0;
 
     [Space(20)]
     public List<OnDataUpdated> onDataUpdatedEvents = new List<OnDataUpdated>
@@ -24,16 +25,27 @@ public class CooldownLauncher : AbilityLauncher
 
     IEnumerator LaunchIE()
     {
-        Ability clone = Instantiate(abilities[0], (Vector2)sender.transform.position + Vector2.one, Quaternion.identity);
+        Ability clone = Instantiate(abilities[0], GameManager.instance.player.weapon.tip.position, Quaternion.identity);
+
         cooldown = cooldownTime;
         while(cooldown > 0)
         {
-            cooldown -= Time.deltaTime;
+            float time = Time.deltaTime + cooldownMod;
+            cooldown -= time;
+            cooldownMod = 0;
             DataUpdate(this, 0);
             yield return new WaitForSeconds(Time.deltaTime);
         }
         cooldown = 0;
     }
+
+
+    public void CooldownFaster()
+    {
+        cooldownMod = 0.06f;
+    }
+
+
 
     public override float GetCurrentValue()
     {

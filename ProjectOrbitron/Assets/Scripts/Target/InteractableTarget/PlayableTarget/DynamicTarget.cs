@@ -32,10 +32,11 @@ public class DynamicTarget : PlayableTarget
         if (stats[0].current - damageAmount > 0)
         {
             stats[0].current -= damageAmount;
+            rest = damageAmount/2.0f;
         }
         else
         {
-            rest = damageAmount - stats[0].current;
+            rest = (damageAmount - stats[0].current)/2;
             stats[0].current = 0;
             DataUpdate(this, 0);
 

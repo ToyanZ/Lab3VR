@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     
     public Target target;
     public Weapon weapon;
+    public CooldownLauncher abilityLauncher;
 
     [Space(20)]
     public InputActionReference shootInputActionSim;

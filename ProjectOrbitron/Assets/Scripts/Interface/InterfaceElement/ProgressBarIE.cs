@@ -53,7 +53,6 @@ public class ProgressBarIE : NumericIE
     {
         filler.fillAmount = newFillAmount;
         SetColor(1, filler.fillAmount);
-        print("happening");
     }
     private void Smoothed(Image filler, int index)
     {
