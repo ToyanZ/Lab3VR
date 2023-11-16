@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
     //    speed = GameManager.instance.playerValues.movementSpeed + speedMod;
 
     //    inputActions = new PlayerInputActions();
-        
+
     //    rotationInputAction.action.performed += ctx => Rotate(ctx);
     //    moveInputAction.action.performed += ctx =>  Move(ctx);
     //    shootInputAction.action.performed += ctx => Shoot(ctx);
@@ -64,7 +64,7 @@ public class Player : MonoBehaviour
     //{
     //    direction = moveInputAction.action.ReadValue<Vector2>().normalized;
     //}
-    
+
     //void Shoot()
     //{
     //    if (shootInputAction.action.IsPressed()) weapon.Shoot(transform.up); 
@@ -87,6 +87,7 @@ public class Player : MonoBehaviour
             shooting = shootInputActionSim.action.IsPressed();
             pressing = holdInputActionSim.action.IsPressed();
         }
+
 
     }
 

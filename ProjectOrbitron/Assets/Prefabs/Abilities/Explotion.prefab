@@ -118,7 +118,7 @@ Rigidbody:
   m_GameObject: {fileID: 5470729695513549329}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 0.7
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -152,6 +152,8 @@ MonoBehaviour:
   loadTime: 2
   stayTime: 0
   targets: []
+  mode: 0
+  signal: 0
   onDataUpdatedEvents:
   - name: Enter
     statIndex: 0
@@ -231,6 +233,11 @@ MonoBehaviour:
     Event:
       m_PersistentCalls:
         m_Calls: []
+  - name: Signal
+    statIndex: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!114 &4700798552656148788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,8 +253,10 @@ MonoBehaviour:
   sender: {fileID: 0}
   rigidBody: {fileID: 967320858443687398}
   receiver: []
+  damage: 70
   speed: 5
-  force: 1000
+  force: 10
+  jumpForce: 1000
   particles: {fileID: 552954195094119867, guid: 7e0aa4cf4aaac134abba64086c8d8db9, type: 3}
 --- !u!1 &8698640985754465199
 GameObject:
