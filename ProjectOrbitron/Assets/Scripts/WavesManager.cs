@@ -17,12 +17,19 @@ public class WavesManager : SpawnEnemies
 
     public GameObject light;
 
+    public bool waveEnable;
+
+    public GameObject limitZone;
+
     private void Awake()
     {
         instance = this;
     }
-    private void Start()
+
+    public void StartWaves()
     {
+        limitZone.SetActive(true);
+        waveEnable = true;
         remainingEnemies = initialEnemies;
         StartSpawnEnemies();
         remainingTimeTEXT.text = "";
@@ -30,18 +37,18 @@ public class WavesManager : SpawnEnemies
 
     public void Update()
     {
-        if(remainingEnemies <= 0 && inWave)
+        if(remainingEnemies <= 0 && inWave && waveEnable)
         {
             remainingTimeTEXT.text = "";
             inWave = false;
             StartCoroutine("LoadNewWave");
             light.SetActive(true);
         }
-        else if(!inWave)
+        else if(!inWave && waveEnable)
         {
             currentTime = currentTime - Time.deltaTime;
             remainingTimeTEXT.text = "" + currentTime.ToString("0.0");
-        }else if(inWave)
+        }else if(inWave && waveEnable)
         {
             light.SetActive(false);
             remainingTimeTEXT.text = "";
