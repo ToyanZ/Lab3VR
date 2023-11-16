@@ -14,6 +14,7 @@ public class ContactTrigger : Trigger
         new OnDataUpdated(Type.Stay.ToString(), 1, new UnityEvent<InterfaceData>()),
         new OnDataUpdated(Type.StayDone.ToString(), 1, new UnityEvent<InterfaceData>()),
         new OnDataUpdated(Type.Exit.ToString(), 0, new UnityEvent<InterfaceData>()),
+        new OnDataUpdated(Type.Signal.ToString(), 0, new UnityEvent<InterfaceData>())
     };
 
     private void Start()
@@ -52,10 +53,22 @@ public class ContactTrigger : Trigger
                 }
             }
         }
+
+
+        List<Target> t2 = targets;
+        for(int i=0; i<t2.Count; i++)
+        {
+            if (t2[i] == null)
+            {
+                targets.RemoveAt(i);
+            }
+        }
+
+
     }
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if (enterLocked) return;
 
@@ -66,8 +79,21 @@ public class ContactTrigger : Trigger
             DataUpdate(this, ToIndex(Type.Enter.ToString()));
             load = 0;
         }
+
+        switch (mode)
+        {
+            case Mode.Pulse:
+                signal = true;
+                DataUpdate(this, ToIndex(Type.Signal.ToString()));
+                break;
+            case Mode.Switch:
+                signal = !signal;
+                if (signal) DataUpdate(this, ToIndex(Type.Signal.ToString()));
+                break;
+        }
     }
-    private void OnCollisionExit2D(Collision2D collision)
+
+    private void OnCollisionExit(Collision collision)
     {
         if (exitLocked) return;
 
@@ -78,7 +104,10 @@ public class ContactTrigger : Trigger
             DataUpdate(this, ToIndex(Type.Exit.ToString()));
             load = 0;
         }
+
+        if (mode == Mode.Pulse) signal = false;
     }
+
 
     public override float GetMaxValue()
     {
@@ -98,7 +127,12 @@ public class ContactTrigger : Trigger
             default: return 1;
         }
     }
-    public override bool GetBoolValue() { return false; }
+    public override bool GetBoolValue() { return signal; }
     public override string GetDisplayValue() { return name; }
+
+    public void LogUpdate()
+    {
+        print("happening");
+    }
 
 }

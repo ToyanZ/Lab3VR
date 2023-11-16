@@ -22,7 +22,8 @@ public class IA_Enemies : MonoBehaviour
     {
         if(isAlive && Player != null) 
         {
-            enemy.SetDestination(Player.position);
+            //enemy.SetDestination(Player.position);
+            enemy.destination = Player.position;
         }
     }
     public void KillEnemy()
