@@ -16,7 +16,7 @@ public abstract class InterfaceData : MonoBehaviour
     public virtual string GetDisplayValue() { Debug.LogError("[GetDisplayValue() Not Implemented]"); return ""; }
     public void DataUpdate(InterfaceData interfaceData, int eventIndex)
     {
-        if(eventIndex < onDataUpdatedEventsPrivate.Count)
+        if(eventIndex < onDataUpdatedEventsPrivate.Count && eventIndex > -1)
         {
             lastIndexCalled = onDataUpdatedEventsPrivate[eventIndex].statIndex;
             onDataUpdatedEventsPrivate[eventIndex].Event?.Invoke(interfaceData);

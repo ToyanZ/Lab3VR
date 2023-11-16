@@ -17,7 +17,12 @@ public class Projectile : Ability
             foreach (Target target in receiver)
             {
                 if (target == null) continue;
-                target.TakeDamage(damage);
+                float reward = target.TakeDamage(damage);
+                
+                if (reward > 0)
+                {
+                    GameManager.instance.player.abilityLauncher.CooldownFaster();
+                }
             }
         } catch (Exception e) { }
         gameObject.SetActive(false);

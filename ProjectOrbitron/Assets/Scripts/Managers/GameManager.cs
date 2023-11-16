@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [Space(10)]
     public bool useSimulator;
     [SerializeField] private GameObject deviceSimulator;
+    public Player player;
 
     private void Awake()
     {

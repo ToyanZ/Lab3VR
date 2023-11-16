@@ -6,7 +6,8 @@ using UnityEngine.Events;
 
 public abstract class Trigger : InterfaceData
 {
-    public enum Type { Enter, Load, LoadDone, Stay, StayDone, Exit}
+    public enum Type { Enter, Load, LoadDone, Stay, StayDone, Exit, Signal}
+    public enum Mode { Pulse, Switch}
     [Space(20)]
     public float loadTime = 0;
     public float stayTime = 0;
@@ -21,6 +22,9 @@ public abstract class Trigger : InterfaceData
     protected float stay = 0;
 
     [SerializeField] protected List<Target> targets;
+
+    public Mode mode = Mode.Pulse;
+    public bool signal = false;
 
     public Target GetLastTarget()
     {

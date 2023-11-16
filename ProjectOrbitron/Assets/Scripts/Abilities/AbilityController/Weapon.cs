@@ -80,10 +80,9 @@ public class Weapon : AbilityController
     public void Shoot()
     {
         Vector3 direction = tip.position - center.position;
-        //RealoadUpdate();
-        //FireRateUpdate();
-        //if (CanShoot()) LaunchProjectile(direction);
-        LaunchProjectile(direction);
+        RealoadUpdate();
+        FireRateUpdate();
+        if (CanShoot()) LaunchProjectile(direction);
     }
 
     private void OnDrawGizmos()
