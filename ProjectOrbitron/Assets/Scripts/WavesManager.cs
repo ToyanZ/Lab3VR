@@ -21,9 +21,17 @@ public class WavesManager : SpawnEnemies
 
     public GameObject limitZone;
 
+    public Animator[] animDoors;
+
     private void Awake()
     {
         instance = this;
+        light.SetActive(true);
+        limitZone.SetActive(false);
+        for (int i = 0; i < animDoors.Length; i++)
+        {
+            animDoors[i].SetBool("Open", false);
+        }
     }
 
     public void StartWaves()
@@ -33,6 +41,10 @@ public class WavesManager : SpawnEnemies
         remainingEnemies = initialEnemies;
         StartSpawnEnemies();
         remainingTimeTEXT.text = "";
+        for(int i = 0; i < animDoors.Length ; i++)
+        {
+            animDoors[i].SetBool("Open", true);
+        }
     }
 
     public void Update()

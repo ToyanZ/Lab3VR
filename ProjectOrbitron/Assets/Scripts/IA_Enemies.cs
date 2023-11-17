@@ -12,10 +12,14 @@ public class IA_Enemies : MonoBehaviour
     public bool isAlive;
 
     public Animator anim;
+    public float currentSpeed;
+
+    public int id_Attack;
 
     private void Start()
     {
         anim = GetComponent<Animator>();
+        currentSpeed = enemy.speed;
     }
 
     private void Update()
@@ -35,5 +39,24 @@ public class IA_Enemies : MonoBehaviour
             anim.SetTrigger("Death");
             enemy.speed = 0;
         }
+    }
+
+    public void Attack()
+    {
+        id_Attack = Random.Range(0, 2);
+        anim.SetInteger("id_Attack", id_Attack);
+
+        if (isAlive)
+        {
+            anim.SetTrigger("Attack");
+        }
+    }
+
+    IEnumerator ReturnWalking()
+    {
+        float returnToWalk = id_Attack == 0 ? 1.5f : 1f;
+        enemy.speed = 0;
+        yield return new WaitForSeconds(returnToWalk);
+        enemy.speed = currentSpeed;
     }
 }
