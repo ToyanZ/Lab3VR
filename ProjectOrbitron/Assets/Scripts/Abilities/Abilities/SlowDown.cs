@@ -6,6 +6,22 @@ public class SlowDown : Ability
 {
     List<IA_Enemies> currentEnemies;
 
+    public float speed = 80;
+    Vector3 startVelocity;
+
+    private void Start()
+    {
+        startVelocity = GameManager.instance.player.weapon.GetAimDirection().normalized;
+    }
+
+
+    private void FixedUpdate()
+    {
+        rigidBody.velocity = startVelocity * speed;
+    }
+
+
+
     public override void InvokeAbility()
     {
         currentEnemies = new List<IA_Enemies>();

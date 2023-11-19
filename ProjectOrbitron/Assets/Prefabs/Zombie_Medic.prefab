@@ -20,6 +20,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 5255199365735611827, guid: d71a7b043b266044ea033964ebe448f6, type: 3}
+      propertyPath: damage
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 6973827098789854750, guid: d71a7b043b266044ea033964ebe448f6, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -479,6 +483,10 @@ PrefabInstance:
     - target: {fileID: 6979488091576551750, guid: d71a7b043b266044ea033964ebe448f6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7012643340527828630, guid: d71a7b043b266044ea033964ebe448f6, type: 3}
+      propertyPath: m_Speed
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 7075243035269592856, guid: d71a7b043b266044ea033964ebe448f6, type: 3}
       propertyPath: m_Layer

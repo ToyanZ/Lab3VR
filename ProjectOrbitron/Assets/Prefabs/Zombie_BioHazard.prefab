@@ -1627,7 +1627,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1.5
+  m_Speed: 1.7
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 300
@@ -1655,6 +1655,9 @@ MonoBehaviour:
   Player: {fileID: 0}
   isAlive: 1
   anim: {fileID: 0}
+  currentSpeed: 0
+  id_Attack: 0
+  damage: 0.1
 --- !u!136 &1929230668626531903
 CapsuleCollider:
   m_ObjectHideFlags: 0

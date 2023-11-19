@@ -16,10 +16,17 @@ public class IA_Enemies : MonoBehaviour
 
     public int id_Attack;
 
+    [Space(20)]
+    public float damage = 0.02f;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
         currentSpeed = enemy.speed;
+
+
+        Player = GameManager.instance.player.transform;
+
     }
 
     private void Update()
@@ -59,4 +66,26 @@ public class IA_Enemies : MonoBehaviour
         yield return new WaitForSeconds(returnToWalk);
         enemy.speed = currentSpeed;
     }
+
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Player player;
+        if (collision.gameObject.TryGetComponent<Player>(out player))
+        {
+            player.target.TakeDamage(damage);
+        }
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        Player player;
+        if (collision.gameObject.TryGetComponent<Player>(out player))
+        {
+            player.target.TakeDamage(damage);
+        }
+    }
+
+
 }
