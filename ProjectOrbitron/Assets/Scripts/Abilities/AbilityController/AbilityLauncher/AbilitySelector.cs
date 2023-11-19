@@ -8,6 +8,7 @@ public class AbilitySelector : AbilityController
 {
 
     [Space(20)]
+    public InputActionReference launchAbilitySim;
     public InputActionReference launchAbility;
     public List<AbilityLauncher> launchers;
     public AbilityLauncher currentLauncher;
@@ -36,6 +37,11 @@ public class AbilitySelector : AbilityController
 
     private void Update()
     {
+        if (launchAbilitySim.action.WasPressedThisFrame())
+        {
+            currentLauncher.Launch();
+        }
+
         if (launchAbility.action.WasPressedThisFrame())
         {
             currentLauncher.Launch();

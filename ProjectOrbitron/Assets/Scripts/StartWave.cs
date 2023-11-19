@@ -10,7 +10,9 @@ public class StartWave : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && !starWave)
+        Player player;
+
+        if (other.TryGetComponent<Player>(out player) && !starWave)
         {
             starWave = true;
             wavesManager.StartWaves();

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3133765621256292949}
   - component: {fileID: 4700798552656148788}
   m_Layer: 0
-  m_Name: Explotion
+  m_Name: Explotion Blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bfbcc1869ae85074682c22611b860aaf, type: 2}
+  - {fileID: 2100000, guid: 07ebdf7fb53194c41b0037189217d482, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -258,7 +258,7 @@ MonoBehaviour:
   speed: 5
   force: 30
   jumpForce: 1000
-  particles: {fileID: 552954195094119867, guid: 7e0aa4cf4aaac134abba64086c8d8db9, type: 3}
+  particles: {fileID: 552954195094119867, guid: 19607b0a70cdbec4188697edde377819, type: 3}
 --- !u!1 &8698640985754465199
 GameObject:
   m_ObjectHideFlags: 0

@@ -151,6 +151,8 @@ MonoBehaviour:
   loadTime: 3
   stayTime: 0
   targets: []
+  mode: 0
+  signal: 0
   onDataUpdatedEvents:
   - name: Enter
     statIndex: 0
@@ -269,3 +271,4 @@ MonoBehaviour:
   sender: {fileID: 0}
   rigidBody: {fileID: 5261549259650993420}
   receiver: []
+  speed: 5
