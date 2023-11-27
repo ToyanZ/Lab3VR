@@ -66,7 +66,8 @@ public class OverlapTrigger : Trigger
         if (target != null)
         {
             if (!targets.Contains(target)) targets.Add(target);
-            DataUpdate(this, ToIndex(Type.Enter.ToString()));
+            match = target.id == id; 
+            DataUpdate(this, 0);
             load = 0;
         }
 
@@ -74,14 +75,15 @@ public class OverlapTrigger : Trigger
         {
             case Mode.Pulse:
                 signal = true;
-                DataUpdate(this, ToIndex(Type.Signal.ToString()));
+                DataUpdate(this, 6);
+                signal = false;
                 break;
             case Mode.Switch:
                 signal = !signal;
-                if (signal) DataUpdate(this, ToIndex(Type.Signal.ToString()));
+                if (signal) DataUpdate(this, 6);
                 break;
         }
-        
+
     }
     private void OnTriggerExit(Collider collision)
     {

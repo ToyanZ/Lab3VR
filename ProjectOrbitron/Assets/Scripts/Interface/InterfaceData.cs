@@ -7,7 +7,8 @@ using UnityEngine.Events;
 public abstract class InterfaceData : MonoBehaviour
 {
     protected int lastIndexCalled = 0;
-    [HideInInspector] public  List<OnDataUpdated> onDataUpdatedEventsPrivate;
+    //[HideInInspector] 
+    public  List<OnDataUpdated> onDataUpdatedEventsPrivate;
     //public OnDataUpdatedEvent onDataUpdatedEvent;
     public virtual float GetCurrentValue() { Debug.LogError("[GetCurrentValue() Not Implemented]"); return 0; }
     public virtual float GetMaxValue() { Debug.LogError("[GetMaxValue() Not Implemented]"); return 0; }

@@ -25,7 +25,7 @@ public class IA_Enemies : MonoBehaviour
         currentSpeed = enemy.speed;
 
 
-        Player = GameManager.instance.player.transform;
+        //Player = GameManager.instance.player.transform;
 
     }
 

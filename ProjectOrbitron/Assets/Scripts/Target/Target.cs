@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Target : InterfaceData
 {
-    int layerMask = 0;
+    public int id = 0;
     public GameObject parent;
 
     public abstract float TakeDamage(float damageAmount);

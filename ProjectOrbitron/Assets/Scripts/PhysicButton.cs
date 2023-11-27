@@ -10,22 +10,30 @@ public class PhysicButton : MonoBehaviour
     public bool pressed = false;
     public float time = 0.1f;
     private Vector3 velocity;
-
+    public bool stayOnPosition = true;
 
    
 
     private void FixedUpdate()
     {
-        if (pressed)
+        if(stayOnPosition)
         {
-            transform.position = Vector3.SmoothDamp(transform.position, end.position, ref velocity, time);
+            if (pressed)
+            {
+                transform.position = Vector3.SmoothDamp(transform.position, end.position, ref velocity, time);
+            }
+            else
+            {
+                transform.position = Vector3.SmoothDamp(transform.position, start.position, ref velocity, time);
+            }
         }
-        else
-        {
-            transform.position = Vector3.SmoothDamp(transform.position, start.position, ref velocity, time);
-        }
+        
     }
 
+    public void SetPressed(bool pressed)
+    {
+        this.pressed = pressed;
+    }
 
     public void Spawn(GameObject go)
     {

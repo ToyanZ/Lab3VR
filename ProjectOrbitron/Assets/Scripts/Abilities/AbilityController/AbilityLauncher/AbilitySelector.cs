@@ -56,9 +56,11 @@ public class AbilitySelector : AbilityController
             for (int i = 0; i < launchers.Count; i++)
             {
                 launchers[i].gameObject.SetActive(false);
+                launchers[i].RestartCooldown();
             }
             launchers[index].gameObject.SetActive(true);
             currentLauncher = launchers[index];
+
             StartCoroutine(Cooldown());
         }
         

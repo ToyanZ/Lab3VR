@@ -6,6 +6,8 @@ using UnityEngine.Events;
 
 public abstract class Trigger : InterfaceData
 {
+    public bool match = false;
+    public int id = 0;
     public enum Type { Enter, Load, LoadDone, Stay, StayDone, Exit, Signal}
     public enum Mode { Pulse, Switch}
     [Space(20)]
@@ -41,7 +43,9 @@ public abstract class Trigger : InterfaceData
 
     public int ToIndex(string name)
     {
-        return onDataUpdatedEventsPrivate.IndexOf(onDataUpdatedEventsPrivate.Find(x => x.name == name));
+        int idex = onDataUpdatedEventsPrivate.IndexOf(onDataUpdatedEventsPrivate.Find(x => x.name == name));
+        
+        return idex;
     }
     public void Print(string message)
     {

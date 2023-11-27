@@ -122,9 +122,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onDataUpdatedEventsPrivate: []
+  match: 0
+  id: 0
   loadTime: 0
   stayTime: 0
   targets: []
+  mode: 0
+  signal: 0
   onDataUpdatedEvents:
   - name: Enter
     statIndex: 0
@@ -180,6 +184,11 @@ MonoBehaviour:
     Event:
       m_PersistentCalls:
         m_Calls: []
+  - name: Signal
+    statIndex: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!114 &282516885096967866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,7 +204,7 @@ MonoBehaviour:
   sender: {fileID: 0}
   rigidBody: {fileID: 3640657437192575298}
   receiver: []
-  damage: 10
+  damage: 7
 --- !u!54 &3640657437192575298
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -26,10 +26,11 @@ public class CooldownLauncher : AbilityLauncher
 
     IEnumerator LaunchIE()
     {
+        cooldown = cooldownTime;
+        
         Ability clone = Instantiate(abilities[0], GameManager.instance.player.weapon.tip.position, Quaternion.identity);
         clone.sender = sender;
 
-        cooldown = cooldownTime;
         while(cooldown > 0)
         {
             float time = Time.deltaTime + cooldownMod;
@@ -47,7 +48,12 @@ public class CooldownLauncher : AbilityLauncher
         cooldownMod = cooldownModValue;
     }
 
-
+    public override void RestartCooldown()
+    {
+        StopAllCoroutines();
+        cooldown = 0;
+        DataUpdate(this, 0);
+    }
 
     public override float GetCurrentValue()
     {
