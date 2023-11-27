@@ -13,7 +13,7 @@ public class Turret : MonoBehaviour
         List<Target> targets = trigger.GetTargets();
         foreach (Target target in targets)
         {
-            if(target.gameObject.GetComponent<Character>() != null)
+            if(target.gameObject.GetComponent<Player>() != null)
             {
                 sender = target;
                 break;

@@ -68,8 +68,6 @@ public class Explotion : Ability
 
         }
 
-
-
         foreach (Target target in receiver)
         {
             
