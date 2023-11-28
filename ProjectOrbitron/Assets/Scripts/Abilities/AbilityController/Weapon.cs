@@ -39,16 +39,16 @@ public class Weapon : AbilityController
     {
         Stat ammo = GetStat(WeaponStat.Ammo);
         ammo.current = ammo.max;
+        
         Stat reloading = GetStat(WeaponStat.Reload);
         reloading.current = 0;
         reloading.boolValue = false;
+        
         Stat fireRate = GetStat(WeaponStat.FireRate);
         fireRate.current = 0;
+        
         onDataUpdatedEventsPrivate = onDataUpdatedEvents;
-
-                        //NO OLVIDAR!!
-
-        //stats[4].max = abilities.Count - 1;
+        stats[4].max = abilities.Count - 1;
         lastIndex = currentAbilityIndex;
     }
 
@@ -76,7 +76,6 @@ public class Weapon : AbilityController
         FireRateUpdate();
         if (CanShoot()) LaunchProjectile(direction);
     }
-
     public void Shoot()
     {
         Vector3 direction = tip.position - center.position;
@@ -148,7 +147,7 @@ public class Weapon : AbilityController
 
     Stat GetStat(WeaponStat weaponStat)
     {
-        return stats.Find(x => x.displayName == weaponStat.ToString());
+        return stats.Find(stat => stat.displayName == weaponStat.ToString());
     }
 
     public override float GetCurrentValue()

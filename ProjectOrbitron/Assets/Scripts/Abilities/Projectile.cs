@@ -8,7 +8,6 @@ public class Projectile : Ability
     public float damage = 10;
 
 
-
     public override void Activate()
     {
         if (receiver.Count == 0) return;

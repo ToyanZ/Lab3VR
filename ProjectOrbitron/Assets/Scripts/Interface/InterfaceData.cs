@@ -10,8 +10,8 @@ public abstract class InterfaceData : MonoBehaviour
     //[HideInInspector] 
     public  List<OnDataUpdated> onDataUpdatedEventsPrivate;
     //public OnDataUpdatedEvent onDataUpdatedEvent;
-    public virtual float GetCurrentValue() { Debug.LogError("[GetCurrentValue() Not Implemented]"); return 0; }
-    public virtual float GetMaxValue() { Debug.LogError("[GetMaxValue() Not Implemented]"); return 0; }
+    public virtual float GetCurrentValue() { Debug.LogError("[GetCurrentValue() Not Implemented]"); return 1; }
+    public virtual float GetMaxValue() { Debug.LogError("[GetMaxValue() Not Implemented]"); return 1; }
     public virtual string GetStringValue() { Debug.LogError("[GetMaxValue() Not Implemented]"); return ""; }
     public virtual bool GetBoolValue() { Debug.LogError("[GetBoolValue() Not Implemented]"); return false; }
     public virtual string GetDisplayValue() { Debug.LogError("[GetDisplayValue() Not Implemented]"); return ""; }

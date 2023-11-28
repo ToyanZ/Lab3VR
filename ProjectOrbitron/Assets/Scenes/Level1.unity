@@ -20711,6 +20711,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -4.439
       objectReference: {fileID: 0}
+    - target: {fileID: 592277924539250539, guid: 48140935236ee2743bb6716117ae8eae, type: 3}
+      propertyPath: pctFormat
+      value: ' %'
+      objectReference: {fileID: 0}
     - target: {fileID: 935162938367999046, guid: 48140935236ee2743bb6716117ae8eae, type: 3}
       propertyPath: onDataUpdatedEvents.Array.data[1].Event.m_PersistentCalls.m_Calls.Array.size
       value: 0
@@ -20786,6 +20790,14 @@ PrefabInstance:
     - target: {fileID: 1340715045720278949, guid: 48140935236ee2743bb6716117ae8eae, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.0382
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400691025525208565, guid: 48140935236ee2743bb6716117ae8eae, type: 3}
+      propertyPath: onDataUpdatedEvents.Array.data[0].Event.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400691025525208565, guid: 48140935236ee2743bb6716117ae8eae, type: 3}
+      propertyPath: onDataUpdatedEvents.Array.data[0].Event.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1577324006567091681, guid: 48140935236ee2743bb6716117ae8eae, type: 3}
       propertyPath: m_SizeDelta.x
@@ -20962,6 +20974,10 @@ PrefabInstance:
     - target: {fileID: 7668468277486498995, guid: 48140935236ee2743bb6716117ae8eae, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -179.336
+      objectReference: {fileID: 0}
+    - target: {fileID: 9199157849887651107, guid: 48140935236ee2743bb6716117ae8eae, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
