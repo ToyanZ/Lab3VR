@@ -7,7 +7,7 @@ public class TriggerMaster : MonoBehaviour
 {
     public List<Trigger> triggers;
     public UnityEvent OnCompleted;
-    private bool completed = true;
+    [SerializeField] private bool completed = true;
 
     private void Start()
     {
@@ -15,6 +15,7 @@ public class TriggerMaster : MonoBehaviour
     }
     public void UpdateTMaster()
     {
+        completed = true;
         foreach (Trigger trigger in triggers)
         {
             if (!trigger.match) completed = false;
@@ -22,4 +23,5 @@ public class TriggerMaster : MonoBehaviour
 
         if (completed) OnCompleted?.Invoke();
     }
+
 }

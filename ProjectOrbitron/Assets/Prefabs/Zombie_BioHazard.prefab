@@ -1721,7 +1721,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onDataUpdatedEventsPrivate: []
+  id: 0
   parent: {fileID: 6973926496102595344}
+  rigidBody: {fileID: 8708079117287804467}
   stats:
   - displayName: health
     type: 0
@@ -1729,8 +1731,7 @@ MonoBehaviour:
     max: 100
     boolValue: 0
     stringValue: health
-  rigidBody: {fileID: 8708079117287804467}
-  dieMode: 0
+  dieMode: 1
   rigidbodyType: 0
   physicsStats:
   - displayName: mass

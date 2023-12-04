@@ -18,7 +18,7 @@ public class DynamicTarget : PlayableTarget
     public List<OnDataUpdated> onDataUpdatedEvents = new List<OnDataUpdated>
     {
         new OnDataUpdated("HealthUpdated", 0, new UnityEvent<InterfaceData>()),
-        new OnDataUpdated("TargetDead", 0, new UnityEvent<InterfaceData>())
+        new OnDataUpdated("TargetDead", 1, new UnityEvent<InterfaceData>())
     };
 
     private void Start()
@@ -29,16 +29,21 @@ public class DynamicTarget : PlayableTarget
     public override float TakeDamage(float damageAmount)
     {
         float rest = 0;
+        
+
+
         if (stats[0].current - damageAmount > 0)
         {
             stats[0].current -= damageAmount;
             rest = damageAmount/2.0f;
+            DataUpdate(this, 0);
         }
         else
         {
             rest = (damageAmount - stats[0].current)/2;
             stats[0].current = 0;
             DataUpdate(this, 0);
+            DataUpdate(this, 1);
 
             switch (dieMode)
             {
@@ -66,7 +71,7 @@ public class DynamicTarget : PlayableTarget
                     break;
             }
         }
-        DataUpdate(this, 0);
+        
 
         return rest;
     }

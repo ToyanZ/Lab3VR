@@ -20,6 +20,11 @@ public class Stat
     [Space(10)]
     public string stringValue= string.Empty;
 
+    float Suma()
+    {
+        return 1;
+    }
+
     public Stat(Type type, string displayName, float current, float max, bool boolValue, string stringValue)
     {
         this.type = type;

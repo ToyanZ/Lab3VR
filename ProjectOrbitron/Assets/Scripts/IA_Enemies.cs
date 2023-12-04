@@ -39,13 +39,10 @@ public class IA_Enemies : MonoBehaviour
     }
     public void KillEnemy()
     {
-        if (isAlive)
-        {
-            WavesManager.instance.remainingEnemies--;
-            isAlive = false;
-            anim.SetTrigger("Death");
-            enemy.speed = 0;
-        }
+        WavesManager.instance.remainingEnemies--;
+        isAlive = false;
+        anim.SetTrigger("Death");
+        enemy.speed = 0;
     }
 
     public void Attack()

@@ -2970,7 +2970,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onDataUpdatedEventsPrivate: []
+  id: 0
   parent: {fileID: 2569809176655824271}
+  rigidBody: {fileID: 3777303988833154697}
   stats:
   - displayName: health
     type: 0
@@ -2978,7 +2980,6 @@ MonoBehaviour:
     max: 200
     boolValue: 0
     stringValue: health
-  rigidBody: {fileID: 3777303988833154697}
   dieMode: 1
   rigidbodyType: 0
   physicsStats:
@@ -3175,6 +3176,7 @@ MonoBehaviour:
   sender: {fileID: 0}
   abilities: []
   currentAbilityIndex: 0
+  launchAbilitySim: {fileID: 0}
   launchAbility: {fileID: -8069514856583376848, guid: 0be0028c24f2a4c14a96b6aa39055933, type: 3}
   launchers:
   - {fileID: 6907535518518195983}

@@ -9,7 +9,6 @@ public abstract class InteractableTarget : Target
         new Stat(Stat.Type.Number, "health", 0, 200, false, "health")
     };
 
-    [Space(20)]
-    public Rigidbody rigidBody;
+    
 
 }

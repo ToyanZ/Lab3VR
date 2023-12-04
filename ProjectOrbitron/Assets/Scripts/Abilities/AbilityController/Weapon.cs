@@ -27,6 +27,8 @@ public class Weapon : AbilityController
     };
     public float recoil = 0;
 
+
+
     [Space(20)]
     public List<OnDataUpdated> onDataUpdatedEvents = new List<OnDataUpdated>
     {
@@ -50,6 +52,7 @@ public class Weapon : AbilityController
         onDataUpdatedEventsPrivate = onDataUpdatedEvents;
         stats[4].max = abilities.Count - 1;
         lastIndex = currentAbilityIndex;
+
     }
 
     private void Update()
@@ -72,14 +75,14 @@ public class Weapon : AbilityController
 
     public void Shoot(Vector2 direction)
     {
-        RealoadUpdate();
+        ReloadUpdate();
         FireRateUpdate();
         if (CanShoot()) LaunchProjectile(direction);
     }
     public void Shoot()
     {
         Vector3 direction = tip.position - center.position;
-        RealoadUpdate();
+        ReloadUpdate();
         FireRateUpdate();
         if (CanShoot()) LaunchProjectile(direction);
     }
@@ -104,7 +107,7 @@ public class Weapon : AbilityController
         Stat fireRate = GetStat(WeaponStat.FireRate);
         return !realoding.boolValue && fireRate.boolValue;
     }
-    void RealoadUpdate()
+    void ReloadUpdate()
     {
         Stat ammo = GetStat(WeaponStat.Ammo);
         Stat reloading = GetStat(WeaponStat.Reload);

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5165316187036425630}
   - component: {fileID: 8012773491305424910}
   m_Layer: 0
-  m_Name: SlowDown
+  m_Name: Attract
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -13.28, y: 2.05, z: 5.45}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -148,6 +148,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onDataUpdatedEventsPrivate: []
+  match: 0
+  id: 0
   loadTime: 3
   stayTime: 0
   targets: []
@@ -195,25 +197,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - name: Load
-    statIndex: 0
-    Event:
-      m_PersistentCalls:
-        m_Calls:
         - m_Target: {fileID: 8012773491305424910}
-          m_TargetAssemblyTypeName: Ability, Assembly-CSharp
-          m_MethodName: SetTargets
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 5165316187036425630}
-            m_ObjectArgumentAssemblyTypeName: Trigger, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 8012773491305424910}
-          m_TargetAssemblyTypeName: SlowDown, Assembly-CSharp
+          m_TargetAssemblyTypeName: Attract, Assembly-CSharp
           m_MethodName: Activate
           m_Mode: 1
           m_Arguments:
@@ -224,6 +209,11 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - name: Load
+    statIndex: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
   - name: LoadDone
     statIndex: 0
     Event:
@@ -272,3 +262,5 @@ MonoBehaviour:
   rigidBody: {fileID: 5261549259650993420}
   receiver: []
   speed: 5
+  radius: 1
+  attractionForce: 15

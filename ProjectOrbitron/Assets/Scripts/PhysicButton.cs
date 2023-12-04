@@ -31,6 +31,10 @@ public class PhysicButton : MonoBehaviour
     {
         this.pressed = pressed;
     }
+    public void SetOnPosition(bool stay)
+    {
+        stayOnPosition = stay;
+    }
 
     public void Spawn(GameObject go)
     {
