@@ -19,6 +19,8 @@ public class IA_Enemies : MonoBehaviour
     [Space(20)]
     public float damage = 0.02f;
 
+    public WaveController waveController;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -36,13 +38,20 @@ public class IA_Enemies : MonoBehaviour
             //enemy.SetDestination(Player.position);
             enemy.destination = Player.position;
         }
+        if (!isAlive)
+        {
+            KillEnemy();
+        }
     }
     public void KillEnemy()
     {
         WavesManager.instance.remainingEnemies--;
+        waveController.remainingEnemies--;
         isAlive = false;
         anim.SetTrigger("Death");
         enemy.speed = 0;
+        waveController.enemiesList.Remove(this.gameObject);
+        Destroy(this.gameObject);
     }
 
     public void Attack()
