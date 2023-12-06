@@ -24840,7 +24840,7 @@ GameObject:
   - component: {fileID: 1758856061}
   - component: {fileID: 1758856060}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24873,7 +24873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21080889bacbaa448813d87e55803439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wavesManager: {fileID: 1982172458}
+  waveController: {fileID: 1982172459}
   starWave: 0
 --- !u!65 &1758856061
 BoxCollider:
