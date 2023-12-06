@@ -64,7 +64,7 @@ public class WaveController : InstantiateEnemies
             }
         }*/
 
-        if (!enableWave)
+        if (enableWave)
         {
             enableWave = true;
             LoadWave();
