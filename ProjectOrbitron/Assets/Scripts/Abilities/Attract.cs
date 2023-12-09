@@ -10,6 +10,7 @@ public class Attract : Ability
     public float speed = 80;
     public float radius = 3;
     public float attractionForce = 30;
+    public ForceMode forceMode = ForceMode.Impulse;
     Vector3 startVelocity;
 
     private void Start()
@@ -20,7 +21,7 @@ public class Attract : Ability
 
     private void FixedUpdate()
     {
-        rigidBody.velocity = startVelocity * speed;
+        if (!rigidBody.isKinematic) rigidBody.velocity = startVelocity * speed;
     }
 
 
@@ -43,30 +44,27 @@ public class Attract : Ability
             {
                 if (target.rigidBody != null)
                 {
-                    Vector3 direction = transform.position - target.transform.position;
-                    target.rigidBody.AddForce(direction.normalized * attractionForce, ForceMode.Impulse);
-                    print(target.name);
+                    IA_Enemies enemy = target.GetComponent<IA_Enemies>();
+                    if (enemy != null) { enemy.enemy.enabled = false; }
+
+                    Vector3 direction = (transform.position - target.transform.position);
+                    float distance = direction.magnitude;
+                    float forceMagnitude = (rigidBody.mass * target.rigidBody.mass) / (distance * distance);
+                    Vector3 force = direction.normalized * forceMagnitude;
+
+                    Vector3 impactPosition = target.rigidBody.ClosestPointOnBounds(transform.position);
+                    
+                    
+                    target.rigidBody.AddForceAtPosition(force, impactPosition, forceMode);
+
+                    //if (enemy != null) { enemy.enemy.enabled = true; }
                 }
             }
         }
-
-        //foreach(Target target in receiver)
-        //{
-            
-        //    InteractableTarget iTarget = target as InteractableTarget;
-        //    if(iTarget != null)
-        //    {
-               
-        //    }
-        //}
     }
 
     public override void Deactivate()
     {
-        foreach(IA_Enemies enemy in currentEnemies)
-        {
-            enemy.enemy.speed *= 4;
-        }
         base.Deactivate();
     }
 

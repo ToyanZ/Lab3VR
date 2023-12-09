@@ -9,4 +9,9 @@ public abstract class Target : InterfaceData
     public Rigidbody rigidBody;
 
     public abstract float TakeDamage(float damageAmount);
+    public void AutoDestroy(GameObject gameObject)
+    {
+        if(gameObject != null) Destroy(gameObject);
+        else Destroy(this.gameObject);
+    }
 }

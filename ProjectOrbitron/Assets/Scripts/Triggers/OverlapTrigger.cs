@@ -24,10 +24,9 @@ public class OverlapTrigger : Trigger
     {
         targets = new List<Target>();
         onDataUpdatedEventsPrivate = onDataUpdatedEvents;
-        //if (useGlobalLoadTime) loadTime = GameManager.instance.triggerLoadTime;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (targets.Count > 0)
         {
@@ -35,7 +34,7 @@ public class OverlapTrigger : Trigger
             {
                 if (loadingLocked) return;
 
-                load += Time.deltaTime;
+                load += Time.fixedDeltaTime;
                 DataUpdate(this, ToIndex(Type.Load.ToString()));
                 if (load >= loadTime) DataUpdate(this, ToIndex(Type.LoadDone.ToString()));
             }
@@ -49,7 +48,7 @@ public class OverlapTrigger : Trigger
                 }
                 else if (stay < stayTime)
                 {
-                    stay += Time.deltaTime;
+                    stay += Time.fixedDeltaTime;
                     DataUpdate(this, ToIndex(Type.Stay.ToString()));
 
                     if (stay > stayTime) DataUpdate(this, ToIndex(Type.StayDone.ToString())); ;
@@ -67,7 +66,7 @@ public class OverlapTrigger : Trigger
         {
             if (!targets.Contains(target)) targets.Add(target);
             match = target.id == id; 
-            DataUpdate(this, 0);
+            DataUpdate(this, ToIndex(Type.Enter.ToString()));
             load = 0;
         }
 
@@ -75,12 +74,12 @@ public class OverlapTrigger : Trigger
         {
             case Mode.Pulse:
                 signal = true;
-                DataUpdate(this, 6);
+                DataUpdate(this, ToIndex(Type.Signal.ToString()));
                 signal = false;
                 break;
             case Mode.Switch:
                 signal = !signal;
-                if (signal) DataUpdate(this, 6);
+                if (signal) DataUpdate(this, ToIndex(Type.Signal.ToString()));
                 break;
         }
 
@@ -100,30 +99,7 @@ public class OverlapTrigger : Trigger
         if (mode == Mode.Pulse) signal = false;
     }
 
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (enterLocked) return;
-
-    //    Target target = collision.GetComponent<Target>();
-    //    if (target != null)
-    //    {
-    //        if (!targets.Contains(target)) targets.Add(target);
-    //        DataUpdate(this, ToIndex(Type.Enter.ToString()) );
-    //        load = 0;
-    //    }
-    //}
-    //private void OnTriggerExit2D(Collider2D collision)
-    //{
-    //    if (exitLocked) return;
-
-    //    Target target = collision.GetComponent<Target>();
-    //    if (target != null)
-    //    {
-    //        targets.Remove(target);
-    //        DataUpdate(this, ToIndex(Type.Exit.ToString()));
-    //        load = 0;
-    //    }
-    //}
+   
 
     public override float GetMaxValue()
     {

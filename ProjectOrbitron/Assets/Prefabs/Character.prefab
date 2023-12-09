@@ -2900,11 +2900,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6985783936445135463}
-  - component: {fileID: 3777303988833154697}
-  - component: {fileID: 935162938367999046}
   - component: {fileID: 3847760991613477543}
   - component: {fileID: 1400691025525208565}
-  - component: {fileID: 1301398212915038971}
   - component: {fileID: 92509779584469670}
   m_Layer: 8
   m_Name: Player
@@ -2930,106 +2927,6 @@ Transform:
   - {fileID: 301676031381018757}
   m_Father: {fileID: 2405113710127537127}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &3777303988833154697
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2569809176655824271}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 1
---- !u!114 &935162938367999046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2569809176655824271}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 338ad8633526b6d4a92bc570bffcff8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onDataUpdatedEventsPrivate: []
-  id: 0
-  parent: {fileID: 2569809176655824271}
-  rigidBody: {fileID: 3777303988833154697}
-  stats:
-  - displayName: health
-    type: 0
-    current: 0
-    max: 200
-    boolValue: 0
-    stringValue: health
-  dieMode: 1
-  rigidbodyType: 0
-  physicsStats:
-  - displayName: mass
-    type: 0
-    current: 0
-    max: 1
-    boolValue: 0
-    stringValue: --
-  - displayName: dragg
-    type: 0
-    current: 0
-    max: 0.05
-    boolValue: 0
-    stringValue: --
-  - displayName: angularDrag
-    type: 0
-    current: 0
-    max: 0.05
-    boolValue: 0
-    stringValue: --
-  - displayName: grvityScale
-    type: 0
-    current: 0
-    max: 1
-    boolValue: 0
-    stringValue: --
-  onDataUpdatedEvents:
-  - name: HealthUpdated
-    statIndex: 0
-    Event:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 7223609898804610805}
-          m_TargetAssemblyTypeName: ProgressBarIE, Assembly-CSharp
-          m_MethodName: Refresh
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - name: TargetDead
-    statIndex: 1
-    Event:
-      m_PersistentCalls:
-        m_Calls: []
 --- !u!114 &3847760991613477543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3042,14 +2939,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 350314896ebbbf144b51ffa4db470f68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 935162938367999046}
+  target: {fileID: 0}
   weapon: {fileID: 1400691025525208565}
   abilityLauncher: {fileID: 6907535518518195983}
-  shootInputActionSim: {fileID: -2439264783773714294, guid: 0be0028c24f2a4c14a96b6aa39055933, type: 3}
   shootInputAction: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  gripInputAction: {fileID: 0}
+  holdGrip: 0
+  runInputAction: {fileID: 0}
+  shootInputActionSim: {fileID: -2439264783773714294, guid: 0be0028c24f2a4c14a96b6aa39055933, type: 3}
   holdInputActionSim: {fileID: -3599823989380923159, guid: 0be0028c24f2a4c14a96b6aa39055933, type: 3}
-  holdInputAction: {fileID: 187161793506945269, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  pressing: 0
 --- !u!114 &1400691025525208565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3063,7 +2961,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onDataUpdatedEventsPrivate: []
-  sender: {fileID: 935162938367999046}
+  sender: {fileID: 0}
   abilities:
   - {fileID: 282516885096967866, guid: 360bbc22935067c428dc30db40272bb9, type: 3}
   currentAbilityIndex: 0
@@ -3139,27 +3037,6 @@ MonoBehaviour:
             m_StringArgument: Abilidad cambiada
             m_BoolArgument: 0
           m_CallState: 2
---- !u!65 &1301398212915038971
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2569809176655824271}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.55, y: 1, z: 0.55}
-  m_Center: {x: 0, y: 0.77, z: 0}
 --- !u!114 &92509779584469670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4340,7 +4217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onDataUpdatedEventsPrivate: []
-  sender: {fileID: 935162938367999046}
+  sender: {fileID: 0}
   abilities:
   - {fileID: 8052362398990678601, guid: c4fdeb18ffb2e4f4482b543322831816, type: 3}
   currentAbilityIndex: 0
@@ -9353,7 +9230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onDataUpdatedEventsPrivate: []
-  sender: {fileID: 935162938367999046}
+  sender: {fileID: 0}
   abilities:
   - {fileID: 4700798552656148788, guid: 2498924dc542c0f448a4c183153c0261, type: 3}
   currentAbilityIndex: 0

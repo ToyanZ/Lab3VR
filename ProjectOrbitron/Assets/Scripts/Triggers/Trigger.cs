@@ -51,4 +51,16 @@ public abstract class Trigger : InterfaceData
     {
         Debug.Log("Inspector Message [" + message + "]");
     }
+    public void AutoDestroy(GameObject go)
+    {
+        Destroy(go);
+    }
+    public void Spawn(GameObject go)
+    {
+        Instantiate(go, transform.position, Quaternion.identity);
+    }
+    public void SpawnAsChild(GameObject go)
+    {
+        Instantiate(go, transform.position, Quaternion.identity, transform);
+    }
 }

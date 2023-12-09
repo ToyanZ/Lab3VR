@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3640657437192575298}
   - component: {fileID: 4649210157202029823}
   m_Layer: 0
-  m_Name: AbilityDamage
+  m_Name: WeaponBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -161,32 +161,32 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - name: Load
-    statIndex: 0
+    statIndex: 1
     Event:
       m_PersistentCalls:
         m_Calls: []
   - name: LoadDone
-    statIndex: 0
+    statIndex: 2
     Event:
       m_PersistentCalls:
         m_Calls: []
   - name: Stay
-    statIndex: 1
+    statIndex: 3
     Event:
       m_PersistentCalls:
         m_Calls: []
   - name: StayDone
-    statIndex: 1
+    statIndex: 4
     Event:
       m_PersistentCalls:
         m_Calls: []
   - name: Exit
-    statIndex: 0
+    statIndex: 5
     Event:
       m_PersistentCalls:
         m_Calls: []
   - name: Signal
-    statIndex: 0
+    statIndex: 6
     Event:
       m_PersistentCalls:
         m_Calls: []

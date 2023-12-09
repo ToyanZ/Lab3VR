@@ -13,7 +13,7 @@ public class Explotion : Ability
     public float speed = 80;
     public float force = 7;
     public float jumpForce = 5;
-    List<Rigidbody> currentEnemies;
+    List<IA_Enemies> currentEnemies;
     public ParticleSystem particles;
     Vector3 startVelocity;
 
@@ -32,7 +32,7 @@ public class Explotion : Ability
 
     public override void InvokeAbility()
     {
-        currentEnemies = new List<Rigidbody>();
+        currentEnemies = new List<IA_Enemies>();
         rigidBody.velocity = Vector3.zero;
         rigidBody.isKinematic = true;
     }
@@ -45,38 +45,46 @@ public class Explotion : Ability
 
         foreach (Collider collider in colliders)
         {
-
-            DynamicTarget targetDynamic;
-            if(collider.gameObject.TryGetComponent<DynamicTarget>(out targetDynamic))
+            Target target = collider.GetComponent<Target>();
+            if(target != null)
             {
-                if (!currentEnemies.Contains(targetDynamic.rigidBody))
+                if (target == sender) continue;
+                else if (target.rigidBody != null)
                 {
-                    currentEnemies.Add(targetDynamic.rigidBody);
-                    Vector2 targetPos = new Vector2(targetDynamic.transform.position.x, targetDynamic.transform.position.z);
+                    
+
+
+                    IA_Enemies enemy = target.GetComponent<IA_Enemies>();
+                    if(enemy != null) 
+                    { 
+                        currentEnemies.Add(enemy);
+                        enemy.currentSpeed = 0; 
+                    }
+
+                    Vector2 targetPos = new Vector2(target.transform.position.x, target.transform.position.z);
                     Vector2 bulletPos = new Vector2(transform.position.x, transform.position.z);
 
-                    Vector3 rawDirection = (targetPos - bulletPos).normalized;
-                    Vector3 direction = new Vector3(rawDirection.x, jumpForce, rawDirection.y);
+                    Vector2 direction = (targetPos - bulletPos).normalized * force;
+                    Vector3 explotionForce = new Vector3(direction.x, jumpForce, direction.y);
 
-                    IA_Enemies ia = collider.gameObject.GetComponent<IA_Enemies>();
-                    if (ia != null) targetDynamic.rigidBody.AddForce((direction * force) + Vector3.up, ForceMode.Impulse);
+                    EnemyWalk enemyWalk = target.GetComponent<EnemyWalk>();
+                    if(enemyWalk != null) enemyWalk.Push(explotionForce);
 
-                    targetDynamic.TakeDamage(damage);
+                    target.rigidBody.AddForce(explotionForce, ForceMode.Impulse);
+                    target.TakeDamage(damage);
 
+                    //if (enemy != null) { enemy.enemy.enabled = true; }
                 }
             }
-
         }
-
-        foreach (Target target in receiver)
-        {
-            
-        }
-
     }
 
     public override void Deactivate()
     {
+        foreach(IA_Enemies enemy in currentEnemies)
+        {
+            if (enemy != null) enemy.enemy.enabled = true;
+        }
         base.Deactivate();
     }
 

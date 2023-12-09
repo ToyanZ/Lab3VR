@@ -24,11 +24,11 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
     ""name"": ""InputControls"",
     ""maps"": [
         {
-            ""name"": ""Gameplay"",
+            ""name"": ""AMap_Gameplay"",
             ""id"": ""e3017747-c732-42eb-ac04-fc1f15d78952"",
             ""actions"": [
                 {
-                    ""name"": ""Trigger"",
+                    ""name"": ""LeftTrigger"",
                     ""type"": ""Button"",
                     ""id"": ""df88f0ab-8410-4272-80d4-f54c1eceae38"",
                     ""expectedControlType"": ""Button"",
@@ -37,25 +37,34 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Thumbstick"",
-                    ""type"": ""Value"",
+                    ""name"": ""LeftGrip"",
+                    ""type"": ""Button"",
                     ""id"": ""28d5de8d-837b-4c7a-8368-79ed0318b798"",
-                    ""expectedControlType"": ""Vector2"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Grip"",
-                    ""type"": ""Button"",
+                    ""name"": ""LeftStick"",
+                    ""type"": ""Value"",
                     ""id"": ""93752df3-42ef-456e-94d6-61974aee1eca"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""LeftStickButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""46d8fa0c-8944-461f-8cb6-deb353da47c3"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""PrimaryButton"",
+                    ""name"": ""RightTrigger"",
                     ""type"": ""Button"",
                     ""id"": ""e0caec0e-794d-443d-b3b6-a125442c2d02"",
                     ""expectedControlType"": ""Button"",
@@ -64,9 +73,81 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""SecondaryButton"",
+                    ""name"": ""RightGrip"",
                     ""type"": ""Button"",
                     ""id"": ""7059f417-efb0-424b-8a3e-8adaed251175"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RightStick"",
+                    ""type"": ""Value"",
+                    ""id"": ""6c8f88b1-c6a8-431b-8d93-97cdb67bb2ad"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""RightStickButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""75ad63e8-fc62-42dc-9a06-93c79e9e54f1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ButtonA"",
+                    ""type"": ""Button"",
+                    ""id"": ""e67351f4-d063-4e49-8592-b10399961261"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ButtonB"",
+                    ""type"": ""Button"",
+                    ""id"": ""5683f67e-bbdb-494e-bcca-4d27e9816398"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ButtonX"",
+                    ""type"": ""Button"",
+                    ""id"": ""3f8cc672-1612-43cc-9e01-c709c37674c0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ButtonY"",
+                    ""type"": ""Button"",
+                    ""id"": ""f09a6ccf-07f9-4626-be58-486d7b4e6991"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Home"",
+                    ""type"": ""Button"",
+                    ""id"": ""d6bf97d3-f63d-4d51-9b7b-cd7ba62a6155"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Menu"",
+                    ""type"": ""Button"",
+                    ""id"": ""0baaa3c1-36fa-4ea5-9bb9-daaadfae7020"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -77,11 +158,11 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""75a02ef3-5e8d-4c5d-ac7c-c7aed01a2a38"",
-                    ""path"": ""<XRController>{RightHand}/{PrimaryButton}"",
+                    ""path"": ""<XRInputV1::Oculus::OculusTouchControllerOpenXR>{LeftHand}/triggerpressed"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""VRController"",
-                    ""action"": ""Trigger"",
+                    ""groups"": ""XR Controller"",
+                    ""action"": ""LeftTrigger"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -92,68 +173,150 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""KeyboardAndMouse"",
-                    ""action"": ""Trigger"",
+                    ""action"": ""LeftTrigger"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
                     ""id"": ""d64a1bd6-d99b-4056-abae-39c902038672"",
-                    ""path"": """",
+                    ""path"": ""<XRInputV1::Oculus::OculusTouchControllerOpenXR>{LeftHand}/thumbsticktouched"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""VRController"",
-                    ""action"": ""Grip"",
+                    ""groups"": ""XR Controller"",
+                    ""action"": ""LeftStick"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
                     ""id"": ""06927fcd-c619-425f-b576-5dac0dfaddff"",
-                    ""path"": """",
+                    ""path"": ""<XRInputV1::Oculus::OculusTouchControllerOpenXR>{RightHand}/triggerpressed"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""VRController"",
-                    ""action"": ""PrimaryButton"",
+                    ""groups"": ""XR Controller"",
+                    ""action"": ""RightTrigger"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
                     ""id"": ""319eae16-9403-45fd-8a20-827c6191411f"",
-                    ""path"": """",
+                    ""path"": ""<XRController>{RightHand}/{GripButton}"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""VRController"",
-                    ""action"": ""SecondaryButton"",
+                    ""groups"": ""XR Controller"",
+                    ""action"": ""RightGrip"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""GUIInteraction"",
-            ""id"": ""a5a04b60-bf70-4099-8e02-9c98ae20cc1c"",
-            ""actions"": [
-                {
-                    ""name"": ""New action"",
-                    ""type"": ""Button"",
-                    ""id"": ""1cca65ee-9ee6-4053-b3eb-fca50980803a"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                }
-            ],
-            ""bindings"": [
+                },
                 {
                     ""name"": """",
-                    ""id"": ""8905a44f-d68a-4ae8-b342-9da5848c4a58"",
+                    ""id"": ""8b51b3d5-84e7-4ff8-973e-fe5ca310ade0"",
+                    ""path"": ""<XRInputV1::Oculus::OculusTouchControllerOpenXR>{LeftHand}/grippressed"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""XR Controller"",
+                    ""action"": ""LeftGrip"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d99c0e87-5b61-4666-a27b-44a6abcf796b"",
                     ""path"": """",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""VRController"",
-                    ""action"": ""New action"",
+                    ""groups"": ""XR Controller"",
+                    ""action"": ""RightStick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8eeffe3e-ba58-4e32-b585-9092458e6cd1"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""XR Controller"",
+                    ""action"": ""ButtonA"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""65b0b3b9-5422-4d8e-84c4-bc854f735b29"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""XR Controller"",
+                    ""action"": ""ButtonB"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""029012e5-d688-499d-a672-e939e5375015"",
+                    ""path"": ""<XRInputV1::Oculus::OculusTouchControllerOpenXR>{LeftHand}/primarybutton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""XR Controller"",
+                    ""action"": ""ButtonX"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""41f1bf49-b7a1-4a11-97fe-1ce9b75abc7d"",
+                    ""path"": ""<XRInputV1::Oculus::OculusTouchControllerOpenXR>{LeftHand}/secondarybutton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""XR Controller"",
+                    ""action"": ""ButtonY"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c47a10ab-88a2-4f33-8eed-8e834441b1c6"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""XR Controller"",
+                    ""action"": ""Home"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6ee229ac-2e24-473a-8cf3-03884fb9be9f"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""XR Controller"",
+                    ""action"": ""Menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1e6cd2fe-2758-4597-9226-447d41d71073"",
+                    ""path"": ""<XRInputV1::Oculus::OculusTouchControllerOpenXR>{LeftHand}/thumbstickclicked"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""XR Controller"",
+                    ""action"": ""LeftStickButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""aef5b956-ce39-43a2-a783-d6cbfb4bb64a"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""XR Controller"",
+                    ""action"": ""RightStickButton"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -178,12 +341,22 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
             ]
         },
         {
-            ""name"": ""VRController"",
-            ""bindingGroup"": ""VRController"",
+            ""name"": ""XR Controller"",
+            ""bindingGroup"": ""XR Controller"",
             ""devices"": [
                 {
                     ""devicePath"": ""<XRController>"",
-                    ""isOptional"": false,
+                    ""isOptional"": true,
+                    ""isOR"": false
+                },
+                {
+                    ""devicePath"": ""<XRController>{LeftHand}/{Back}"",
+                    ""isOptional"": true,
+                    ""isOR"": false
+                },
+                {
+                    ""devicePath"": ""<XRController>{RightHand}/{CenterEyePosition}"",
+                    ""isOptional"": true,
                     ""isOR"": false
                 }
             ]
@@ -212,16 +385,22 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
         }
     ]
 }");
-        // Gameplay
-        m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
-        m_Gameplay_Trigger = m_Gameplay.FindAction("Trigger", throwIfNotFound: true);
-        m_Gameplay_Thumbstick = m_Gameplay.FindAction("Thumbstick", throwIfNotFound: true);
-        m_Gameplay_Grip = m_Gameplay.FindAction("Grip", throwIfNotFound: true);
-        m_Gameplay_PrimaryButton = m_Gameplay.FindAction("PrimaryButton", throwIfNotFound: true);
-        m_Gameplay_SecondaryButton = m_Gameplay.FindAction("SecondaryButton", throwIfNotFound: true);
-        // GUIInteraction
-        m_GUIInteraction = asset.FindActionMap("GUIInteraction", throwIfNotFound: true);
-        m_GUIInteraction_Newaction = m_GUIInteraction.FindAction("New action", throwIfNotFound: true);
+        // AMap_Gameplay
+        m_AMap_Gameplay = asset.FindActionMap("AMap_Gameplay", throwIfNotFound: true);
+        m_AMap_Gameplay_LeftTrigger = m_AMap_Gameplay.FindAction("LeftTrigger", throwIfNotFound: true);
+        m_AMap_Gameplay_LeftGrip = m_AMap_Gameplay.FindAction("LeftGrip", throwIfNotFound: true);
+        m_AMap_Gameplay_LeftStick = m_AMap_Gameplay.FindAction("LeftStick", throwIfNotFound: true);
+        m_AMap_Gameplay_LeftStickButton = m_AMap_Gameplay.FindAction("LeftStickButton", throwIfNotFound: true);
+        m_AMap_Gameplay_RightTrigger = m_AMap_Gameplay.FindAction("RightTrigger", throwIfNotFound: true);
+        m_AMap_Gameplay_RightGrip = m_AMap_Gameplay.FindAction("RightGrip", throwIfNotFound: true);
+        m_AMap_Gameplay_RightStick = m_AMap_Gameplay.FindAction("RightStick", throwIfNotFound: true);
+        m_AMap_Gameplay_RightStickButton = m_AMap_Gameplay.FindAction("RightStickButton", throwIfNotFound: true);
+        m_AMap_Gameplay_ButtonA = m_AMap_Gameplay.FindAction("ButtonA", throwIfNotFound: true);
+        m_AMap_Gameplay_ButtonB = m_AMap_Gameplay.FindAction("ButtonB", throwIfNotFound: true);
+        m_AMap_Gameplay_ButtonX = m_AMap_Gameplay.FindAction("ButtonX", throwIfNotFound: true);
+        m_AMap_Gameplay_ButtonY = m_AMap_Gameplay.FindAction("ButtonY", throwIfNotFound: true);
+        m_AMap_Gameplay_Home = m_AMap_Gameplay.FindAction("Home", throwIfNotFound: true);
+        m_AMap_Gameplay_Menu = m_AMap_Gameplay.FindAction("Menu", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -280,129 +459,155 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // Gameplay
-    private readonly InputActionMap m_Gameplay;
-    private List<IGameplayActions> m_GameplayActionsCallbackInterfaces = new List<IGameplayActions>();
-    private readonly InputAction m_Gameplay_Trigger;
-    private readonly InputAction m_Gameplay_Thumbstick;
-    private readonly InputAction m_Gameplay_Grip;
-    private readonly InputAction m_Gameplay_PrimaryButton;
-    private readonly InputAction m_Gameplay_SecondaryButton;
-    public struct GameplayActions
+    // AMap_Gameplay
+    private readonly InputActionMap m_AMap_Gameplay;
+    private List<IAMap_GameplayActions> m_AMap_GameplayActionsCallbackInterfaces = new List<IAMap_GameplayActions>();
+    private readonly InputAction m_AMap_Gameplay_LeftTrigger;
+    private readonly InputAction m_AMap_Gameplay_LeftGrip;
+    private readonly InputAction m_AMap_Gameplay_LeftStick;
+    private readonly InputAction m_AMap_Gameplay_LeftStickButton;
+    private readonly InputAction m_AMap_Gameplay_RightTrigger;
+    private readonly InputAction m_AMap_Gameplay_RightGrip;
+    private readonly InputAction m_AMap_Gameplay_RightStick;
+    private readonly InputAction m_AMap_Gameplay_RightStickButton;
+    private readonly InputAction m_AMap_Gameplay_ButtonA;
+    private readonly InputAction m_AMap_Gameplay_ButtonB;
+    private readonly InputAction m_AMap_Gameplay_ButtonX;
+    private readonly InputAction m_AMap_Gameplay_ButtonY;
+    private readonly InputAction m_AMap_Gameplay_Home;
+    private readonly InputAction m_AMap_Gameplay_Menu;
+    public struct AMap_GameplayActions
     {
         private @InputControls m_Wrapper;
-        public GameplayActions(@InputControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Trigger => m_Wrapper.m_Gameplay_Trigger;
-        public InputAction @Thumbstick => m_Wrapper.m_Gameplay_Thumbstick;
-        public InputAction @Grip => m_Wrapper.m_Gameplay_Grip;
-        public InputAction @PrimaryButton => m_Wrapper.m_Gameplay_PrimaryButton;
-        public InputAction @SecondaryButton => m_Wrapper.m_Gameplay_SecondaryButton;
-        public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
+        public AMap_GameplayActions(@InputControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @LeftTrigger => m_Wrapper.m_AMap_Gameplay_LeftTrigger;
+        public InputAction @LeftGrip => m_Wrapper.m_AMap_Gameplay_LeftGrip;
+        public InputAction @LeftStick => m_Wrapper.m_AMap_Gameplay_LeftStick;
+        public InputAction @LeftStickButton => m_Wrapper.m_AMap_Gameplay_LeftStickButton;
+        public InputAction @RightTrigger => m_Wrapper.m_AMap_Gameplay_RightTrigger;
+        public InputAction @RightGrip => m_Wrapper.m_AMap_Gameplay_RightGrip;
+        public InputAction @RightStick => m_Wrapper.m_AMap_Gameplay_RightStick;
+        public InputAction @RightStickButton => m_Wrapper.m_AMap_Gameplay_RightStickButton;
+        public InputAction @ButtonA => m_Wrapper.m_AMap_Gameplay_ButtonA;
+        public InputAction @ButtonB => m_Wrapper.m_AMap_Gameplay_ButtonB;
+        public InputAction @ButtonX => m_Wrapper.m_AMap_Gameplay_ButtonX;
+        public InputAction @ButtonY => m_Wrapper.m_AMap_Gameplay_ButtonY;
+        public InputAction @Home => m_Wrapper.m_AMap_Gameplay_Home;
+        public InputAction @Menu => m_Wrapper.m_AMap_Gameplay_Menu;
+        public InputActionMap Get() { return m_Wrapper.m_AMap_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(GameplayActions set) { return set.Get(); }
-        public void AddCallbacks(IGameplayActions instance)
+        public static implicit operator InputActionMap(AMap_GameplayActions set) { return set.Get(); }
+        public void AddCallbacks(IAMap_GameplayActions instance)
         {
-            if (instance == null || m_Wrapper.m_GameplayActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_GameplayActionsCallbackInterfaces.Add(instance);
-            @Trigger.started += instance.OnTrigger;
-            @Trigger.performed += instance.OnTrigger;
-            @Trigger.canceled += instance.OnTrigger;
-            @Thumbstick.started += instance.OnThumbstick;
-            @Thumbstick.performed += instance.OnThumbstick;
-            @Thumbstick.canceled += instance.OnThumbstick;
-            @Grip.started += instance.OnGrip;
-            @Grip.performed += instance.OnGrip;
-            @Grip.canceled += instance.OnGrip;
-            @PrimaryButton.started += instance.OnPrimaryButton;
-            @PrimaryButton.performed += instance.OnPrimaryButton;
-            @PrimaryButton.canceled += instance.OnPrimaryButton;
-            @SecondaryButton.started += instance.OnSecondaryButton;
-            @SecondaryButton.performed += instance.OnSecondaryButton;
-            @SecondaryButton.canceled += instance.OnSecondaryButton;
+            if (instance == null || m_Wrapper.m_AMap_GameplayActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_AMap_GameplayActionsCallbackInterfaces.Add(instance);
+            @LeftTrigger.started += instance.OnLeftTrigger;
+            @LeftTrigger.performed += instance.OnLeftTrigger;
+            @LeftTrigger.canceled += instance.OnLeftTrigger;
+            @LeftGrip.started += instance.OnLeftGrip;
+            @LeftGrip.performed += instance.OnLeftGrip;
+            @LeftGrip.canceled += instance.OnLeftGrip;
+            @LeftStick.started += instance.OnLeftStick;
+            @LeftStick.performed += instance.OnLeftStick;
+            @LeftStick.canceled += instance.OnLeftStick;
+            @LeftStickButton.started += instance.OnLeftStickButton;
+            @LeftStickButton.performed += instance.OnLeftStickButton;
+            @LeftStickButton.canceled += instance.OnLeftStickButton;
+            @RightTrigger.started += instance.OnRightTrigger;
+            @RightTrigger.performed += instance.OnRightTrigger;
+            @RightTrigger.canceled += instance.OnRightTrigger;
+            @RightGrip.started += instance.OnRightGrip;
+            @RightGrip.performed += instance.OnRightGrip;
+            @RightGrip.canceled += instance.OnRightGrip;
+            @RightStick.started += instance.OnRightStick;
+            @RightStick.performed += instance.OnRightStick;
+            @RightStick.canceled += instance.OnRightStick;
+            @RightStickButton.started += instance.OnRightStickButton;
+            @RightStickButton.performed += instance.OnRightStickButton;
+            @RightStickButton.canceled += instance.OnRightStickButton;
+            @ButtonA.started += instance.OnButtonA;
+            @ButtonA.performed += instance.OnButtonA;
+            @ButtonA.canceled += instance.OnButtonA;
+            @ButtonB.started += instance.OnButtonB;
+            @ButtonB.performed += instance.OnButtonB;
+            @ButtonB.canceled += instance.OnButtonB;
+            @ButtonX.started += instance.OnButtonX;
+            @ButtonX.performed += instance.OnButtonX;
+            @ButtonX.canceled += instance.OnButtonX;
+            @ButtonY.started += instance.OnButtonY;
+            @ButtonY.performed += instance.OnButtonY;
+            @ButtonY.canceled += instance.OnButtonY;
+            @Home.started += instance.OnHome;
+            @Home.performed += instance.OnHome;
+            @Home.canceled += instance.OnHome;
+            @Menu.started += instance.OnMenu;
+            @Menu.performed += instance.OnMenu;
+            @Menu.canceled += instance.OnMenu;
         }
 
-        private void UnregisterCallbacks(IGameplayActions instance)
+        private void UnregisterCallbacks(IAMap_GameplayActions instance)
         {
-            @Trigger.started -= instance.OnTrigger;
-            @Trigger.performed -= instance.OnTrigger;
-            @Trigger.canceled -= instance.OnTrigger;
-            @Thumbstick.started -= instance.OnThumbstick;
-            @Thumbstick.performed -= instance.OnThumbstick;
-            @Thumbstick.canceled -= instance.OnThumbstick;
-            @Grip.started -= instance.OnGrip;
-            @Grip.performed -= instance.OnGrip;
-            @Grip.canceled -= instance.OnGrip;
-            @PrimaryButton.started -= instance.OnPrimaryButton;
-            @PrimaryButton.performed -= instance.OnPrimaryButton;
-            @PrimaryButton.canceled -= instance.OnPrimaryButton;
-            @SecondaryButton.started -= instance.OnSecondaryButton;
-            @SecondaryButton.performed -= instance.OnSecondaryButton;
-            @SecondaryButton.canceled -= instance.OnSecondaryButton;
+            @LeftTrigger.started -= instance.OnLeftTrigger;
+            @LeftTrigger.performed -= instance.OnLeftTrigger;
+            @LeftTrigger.canceled -= instance.OnLeftTrigger;
+            @LeftGrip.started -= instance.OnLeftGrip;
+            @LeftGrip.performed -= instance.OnLeftGrip;
+            @LeftGrip.canceled -= instance.OnLeftGrip;
+            @LeftStick.started -= instance.OnLeftStick;
+            @LeftStick.performed -= instance.OnLeftStick;
+            @LeftStick.canceled -= instance.OnLeftStick;
+            @LeftStickButton.started -= instance.OnLeftStickButton;
+            @LeftStickButton.performed -= instance.OnLeftStickButton;
+            @LeftStickButton.canceled -= instance.OnLeftStickButton;
+            @RightTrigger.started -= instance.OnRightTrigger;
+            @RightTrigger.performed -= instance.OnRightTrigger;
+            @RightTrigger.canceled -= instance.OnRightTrigger;
+            @RightGrip.started -= instance.OnRightGrip;
+            @RightGrip.performed -= instance.OnRightGrip;
+            @RightGrip.canceled -= instance.OnRightGrip;
+            @RightStick.started -= instance.OnRightStick;
+            @RightStick.performed -= instance.OnRightStick;
+            @RightStick.canceled -= instance.OnRightStick;
+            @RightStickButton.started -= instance.OnRightStickButton;
+            @RightStickButton.performed -= instance.OnRightStickButton;
+            @RightStickButton.canceled -= instance.OnRightStickButton;
+            @ButtonA.started -= instance.OnButtonA;
+            @ButtonA.performed -= instance.OnButtonA;
+            @ButtonA.canceled -= instance.OnButtonA;
+            @ButtonB.started -= instance.OnButtonB;
+            @ButtonB.performed -= instance.OnButtonB;
+            @ButtonB.canceled -= instance.OnButtonB;
+            @ButtonX.started -= instance.OnButtonX;
+            @ButtonX.performed -= instance.OnButtonX;
+            @ButtonX.canceled -= instance.OnButtonX;
+            @ButtonY.started -= instance.OnButtonY;
+            @ButtonY.performed -= instance.OnButtonY;
+            @ButtonY.canceled -= instance.OnButtonY;
+            @Home.started -= instance.OnHome;
+            @Home.performed -= instance.OnHome;
+            @Home.canceled -= instance.OnHome;
+            @Menu.started -= instance.OnMenu;
+            @Menu.performed -= instance.OnMenu;
+            @Menu.canceled -= instance.OnMenu;
         }
 
-        public void RemoveCallbacks(IGameplayActions instance)
+        public void RemoveCallbacks(IAMap_GameplayActions instance)
         {
-            if (m_Wrapper.m_GameplayActionsCallbackInterfaces.Remove(instance))
+            if (m_Wrapper.m_AMap_GameplayActionsCallbackInterfaces.Remove(instance))
                 UnregisterCallbacks(instance);
         }
 
-        public void SetCallbacks(IGameplayActions instance)
+        public void SetCallbacks(IAMap_GameplayActions instance)
         {
-            foreach (var item in m_Wrapper.m_GameplayActionsCallbackInterfaces)
+            foreach (var item in m_Wrapper.m_AMap_GameplayActionsCallbackInterfaces)
                 UnregisterCallbacks(item);
-            m_Wrapper.m_GameplayActionsCallbackInterfaces.Clear();
+            m_Wrapper.m_AMap_GameplayActionsCallbackInterfaces.Clear();
             AddCallbacks(instance);
         }
     }
-    public GameplayActions @Gameplay => new GameplayActions(this);
-
-    // GUIInteraction
-    private readonly InputActionMap m_GUIInteraction;
-    private List<IGUIInteractionActions> m_GUIInteractionActionsCallbackInterfaces = new List<IGUIInteractionActions>();
-    private readonly InputAction m_GUIInteraction_Newaction;
-    public struct GUIInteractionActions
-    {
-        private @InputControls m_Wrapper;
-        public GUIInteractionActions(@InputControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Newaction => m_Wrapper.m_GUIInteraction_Newaction;
-        public InputActionMap Get() { return m_Wrapper.m_GUIInteraction; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(GUIInteractionActions set) { return set.Get(); }
-        public void AddCallbacks(IGUIInteractionActions instance)
-        {
-            if (instance == null || m_Wrapper.m_GUIInteractionActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_GUIInteractionActionsCallbackInterfaces.Add(instance);
-            @Newaction.started += instance.OnNewaction;
-            @Newaction.performed += instance.OnNewaction;
-            @Newaction.canceled += instance.OnNewaction;
-        }
-
-        private void UnregisterCallbacks(IGUIInteractionActions instance)
-        {
-            @Newaction.started -= instance.OnNewaction;
-            @Newaction.performed -= instance.OnNewaction;
-            @Newaction.canceled -= instance.OnNewaction;
-        }
-
-        public void RemoveCallbacks(IGUIInteractionActions instance)
-        {
-            if (m_Wrapper.m_GUIInteractionActionsCallbackInterfaces.Remove(instance))
-                UnregisterCallbacks(instance);
-        }
-
-        public void SetCallbacks(IGUIInteractionActions instance)
-        {
-            foreach (var item in m_Wrapper.m_GUIInteractionActionsCallbackInterfaces)
-                UnregisterCallbacks(item);
-            m_Wrapper.m_GUIInteractionActionsCallbackInterfaces.Clear();
-            AddCallbacks(instance);
-        }
-    }
-    public GUIInteractionActions @GUIInteraction => new GUIInteractionActions(this);
+    public AMap_GameplayActions @AMap_Gameplay => new AMap_GameplayActions(this);
     private int m_KeyboardAndMouseSchemeIndex = -1;
     public InputControlScheme KeyboardAndMouseScheme
     {
@@ -412,13 +617,13 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
             return asset.controlSchemes[m_KeyboardAndMouseSchemeIndex];
         }
     }
-    private int m_VRControllerSchemeIndex = -1;
-    public InputControlScheme VRControllerScheme
+    private int m_XRControllerSchemeIndex = -1;
+    public InputControlScheme XRControllerScheme
     {
         get
         {
-            if (m_VRControllerSchemeIndex == -1) m_VRControllerSchemeIndex = asset.FindControlSchemeIndex("VRController");
-            return asset.controlSchemes[m_VRControllerSchemeIndex];
+            if (m_XRControllerSchemeIndex == -1) m_XRControllerSchemeIndex = asset.FindControlSchemeIndex("XR Controller");
+            return asset.controlSchemes[m_XRControllerSchemeIndex];
         }
     }
     private int m_GamepadSchemeIndex = -1;
@@ -439,16 +644,21 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
             return asset.controlSchemes[m_JoystickSchemeIndex];
         }
     }
-    public interface IGameplayActions
+    public interface IAMap_GameplayActions
     {
-        void OnTrigger(InputAction.CallbackContext context);
-        void OnThumbstick(InputAction.CallbackContext context);
-        void OnGrip(InputAction.CallbackContext context);
-        void OnPrimaryButton(InputAction.CallbackContext context);
-        void OnSecondaryButton(InputAction.CallbackContext context);
-    }
-    public interface IGUIInteractionActions
-    {
-        void OnNewaction(InputAction.CallbackContext context);
+        void OnLeftTrigger(InputAction.CallbackContext context);
+        void OnLeftGrip(InputAction.CallbackContext context);
+        void OnLeftStick(InputAction.CallbackContext context);
+        void OnLeftStickButton(InputAction.CallbackContext context);
+        void OnRightTrigger(InputAction.CallbackContext context);
+        void OnRightGrip(InputAction.CallbackContext context);
+        void OnRightStick(InputAction.CallbackContext context);
+        void OnRightStickButton(InputAction.CallbackContext context);
+        void OnButtonA(InputAction.CallbackContext context);
+        void OnButtonB(InputAction.CallbackContext context);
+        void OnButtonX(InputAction.CallbackContext context);
+        void OnButtonY(InputAction.CallbackContext context);
+        void OnHome(InputAction.CallbackContext context);
+        void OnMenu(InputAction.CallbackContext context);
     }
 }

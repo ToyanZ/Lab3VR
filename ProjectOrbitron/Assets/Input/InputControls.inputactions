@@ -2,11 +2,11 @@
     "name": "InputControls",
     "maps": [
         {
-            "name": "Gameplay",
+            "name": "AMap_Gameplay",
             "id": "e3017747-c732-42eb-ac04-fc1f15d78952",
             "actions": [
                 {
-                    "name": "Trigger",
+                    "name": "LeftTrigger",
                     "type": "Button",
                     "id": "df88f0ab-8410-4272-80d4-f54c1eceae38",
                     "expectedControlType": "Button",
@@ -15,25 +15,34 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Thumbstick",
-                    "type": "Value",
+                    "name": "LeftGrip",
+                    "type": "Button",
                     "id": "28d5de8d-837b-4c7a-8368-79ed0318b798",
-                    "expectedControlType": "Vector2",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Grip",
-                    "type": "Button",
+                    "name": "LeftStick",
+                    "type": "Value",
                     "id": "93752df3-42ef-456e-94d6-61974aee1eca",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "LeftStickButton",
+                    "type": "Button",
+                    "id": "46d8fa0c-8944-461f-8cb6-deb353da47c3",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "PrimaryButton",
+                    "name": "RightTrigger",
                     "type": "Button",
                     "id": "e0caec0e-794d-443d-b3b6-a125442c2d02",
                     "expectedControlType": "Button",
@@ -42,9 +51,81 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "SecondaryButton",
+                    "name": "RightGrip",
                     "type": "Button",
                     "id": "7059f417-efb0-424b-8a3e-8adaed251175",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RightStick",
+                    "type": "Value",
+                    "id": "6c8f88b1-c6a8-431b-8d93-97cdb67bb2ad",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "RightStickButton",
+                    "type": "Button",
+                    "id": "75ad63e8-fc62-42dc-9a06-93c79e9e54f1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ButtonA",
+                    "type": "Button",
+                    "id": "e67351f4-d063-4e49-8592-b10399961261",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ButtonB",
+                    "type": "Button",
+                    "id": "5683f67e-bbdb-494e-bcca-4d27e9816398",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ButtonX",
+                    "type": "Button",
+                    "id": "3f8cc672-1612-43cc-9e01-c709c37674c0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ButtonY",
+                    "type": "Button",
+                    "id": "f09a6ccf-07f9-4626-be58-486d7b4e6991",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Home",
+                    "type": "Button",
+                    "id": "d6bf97d3-f63d-4d51-9b7b-cd7ba62a6155",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Menu",
+                    "type": "Button",
+                    "id": "0baaa3c1-36fa-4ea5-9bb9-daaadfae7020",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -55,11 +136,11 @@
                 {
                     "name": "",
                     "id": "75a02ef3-5e8d-4c5d-ac7c-c7aed01a2a38",
-                    "path": "<XRController>{RightHand}/{PrimaryButton}",
+                    "path": "<XRInputV1::Oculus::OculusTouchControllerOpenXR>{LeftHand}/triggerpressed",
                     "interactions": "",
                     "processors": "",
-                    "groups": "VRController",
-                    "action": "Trigger",
+                    "groups": "XR Controller",
+                    "action": "LeftTrigger",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -70,68 +151,150 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardAndMouse",
-                    "action": "Trigger",
+                    "action": "LeftTrigger",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "d64a1bd6-d99b-4056-abae-39c902038672",
-                    "path": "",
+                    "path": "<XRInputV1::Oculus::OculusTouchControllerOpenXR>{LeftHand}/thumbsticktouched",
                     "interactions": "",
                     "processors": "",
-                    "groups": "VRController",
-                    "action": "Grip",
+                    "groups": "XR Controller",
+                    "action": "LeftStick",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "06927fcd-c619-425f-b576-5dac0dfaddff",
-                    "path": "",
+                    "path": "<XRInputV1::Oculus::OculusTouchControllerOpenXR>{RightHand}/triggerpressed",
                     "interactions": "",
                     "processors": "",
-                    "groups": "VRController",
-                    "action": "PrimaryButton",
+                    "groups": "XR Controller",
+                    "action": "RightTrigger",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "319eae16-9403-45fd-8a20-827c6191411f",
-                    "path": "",
+                    "path": "<XRController>{RightHand}/{GripButton}",
                     "interactions": "",
                     "processors": "",
-                    "groups": "VRController",
-                    "action": "SecondaryButton",
+                    "groups": "XR Controller",
+                    "action": "RightGrip",
                     "isComposite": false,
                     "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "GUIInteraction",
-            "id": "a5a04b60-bf70-4099-8e02-9c98ae20cc1c",
-            "actions": [
-                {
-                    "name": "New action",
-                    "type": "Button",
-                    "id": "1cca65ee-9ee6-4053-b3eb-fca50980803a",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
+                },
                 {
                     "name": "",
-                    "id": "8905a44f-d68a-4ae8-b342-9da5848c4a58",
+                    "id": "8b51b3d5-84e7-4ff8-973e-fe5ca310ade0",
+                    "path": "<XRInputV1::Oculus::OculusTouchControllerOpenXR>{LeftHand}/grippressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR Controller",
+                    "action": "LeftGrip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d99c0e87-5b61-4666-a27b-44a6abcf796b",
                     "path": "",
                     "interactions": "",
                     "processors": "",
-                    "groups": "VRController",
-                    "action": "New action",
+                    "groups": "XR Controller",
+                    "action": "RightStick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8eeffe3e-ba58-4e32-b585-9092458e6cd1",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR Controller",
+                    "action": "ButtonA",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "65b0b3b9-5422-4d8e-84c4-bc854f735b29",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR Controller",
+                    "action": "ButtonB",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "029012e5-d688-499d-a672-e939e5375015",
+                    "path": "<XRInputV1::Oculus::OculusTouchControllerOpenXR>{LeftHand}/primarybutton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR Controller",
+                    "action": "ButtonX",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "41f1bf49-b7a1-4a11-97fe-1ce9b75abc7d",
+                    "path": "<XRInputV1::Oculus::OculusTouchControllerOpenXR>{LeftHand}/secondarybutton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR Controller",
+                    "action": "ButtonY",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c47a10ab-88a2-4f33-8eed-8e834441b1c6",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR Controller",
+                    "action": "Home",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6ee229ac-2e24-473a-8cf3-03884fb9be9f",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR Controller",
+                    "action": "Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1e6cd2fe-2758-4597-9226-447d41d71073",
+                    "path": "<XRInputV1::Oculus::OculusTouchControllerOpenXR>{LeftHand}/thumbstickclicked",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR Controller",
+                    "action": "LeftStickButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "aef5b956-ce39-43a2-a783-d6cbfb4bb64a",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR Controller",
+                    "action": "RightStickButton",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -156,12 +319,22 @@
             ]
         },
         {
-            "name": "VRController",
-            "bindingGroup": "VRController",
+            "name": "XR Controller",
+            "bindingGroup": "XR Controller",
             "devices": [
                 {
                     "devicePath": "<XRController>",
-                    "isOptional": false,
+                    "isOptional": true,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<XRController>{LeftHand}/{Back}",
+                    "isOptional": true,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<XRController>{RightHand}/{CenterEyePosition}",
+                    "isOptional": true,
                     "isOR": false
                 }
             ]
