@@ -24840,7 +24840,7 @@ GameObject:
   - component: {fileID: 1758856061}
   - component: {fileID: 1758856060}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24873,7 +24873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21080889bacbaa448813d87e55803439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wavesManager: {fileID: 1982172458}
+  waveController: {fileID: 1982172459}
   starWave: 0
 --- !u!65 &1758856061
 BoxCollider:
@@ -28457,6 +28457,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1982172457}
   - component: {fileID: 1982172458}
+  - component: {fileID: 1982172459}
   m_Layer: 0
   m_Name: WaveManager
   m_TagString: Untagged
@@ -28490,7 +28491,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1982172456}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4942bf7073bbdcf4dbdaa28d1a6c4acd, type: 3}
   m_Name: 
@@ -28517,6 +28518,44 @@ MonoBehaviour:
   animDoors:
   - {fileID: 2093605000}
   - {fileID: 977912078}
+--- !u!114 &1982172459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982172456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd618d2d89a800c4ebcf46177819a77b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPosition: {fileID: 2096436946}
+  spawnPositions:
+  - {fileID: 1950917550}
+  - {fileID: 1472131703}
+  remainingEnmiesSpawn: 0
+  enemies:
+  - {fileID: 5587034485183136700, guid: 39e2d77b36c6a9b4d8c92dc1a7462f73, type: 3}
+  - {fileID: 3849592371733258512, guid: c3a137b05da3e124e82cf5c340c1570d, type: 3}
+  - {fileID: 7949259332331797922, guid: 5813a079c046a1144b320a8b710a3e2e, type: 3}
+  remainingEnemies: 0
+  initialEnemies: 3
+  initialWave: 0
+  maxWave: 2
+  timeBetweenWaves: 10
+  currentTime: 0
+  timeBetweenEnableEnemies: 1
+  tutorial: 0
+  startWave: 0
+  inWave: 0
+  enableWave: 0
+  createWave: 0
+  remainingTimeTXT: {fileID: 1230481378}
+  lightText: {fileID: 0}
+  limitZone: {fileID: 0}
+  animDoors: []
+  enemiesList: []
 --- !u!4 &1987643267 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4953886378392248, guid: 104e63ea9c8da8e44afdf8a0dc868399, type: 3}

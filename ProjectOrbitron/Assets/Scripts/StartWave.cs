@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StartWave : MonoBehaviour
 {
-    public WavesManager wavesManager;
+    public WaveController waveController;
 
     public bool starWave;
 
@@ -15,7 +15,7 @@ public class StartWave : MonoBehaviour
         if (other.TryGetComponent<Player>(out player) && !starWave)
         {
             starWave = true;
-            wavesManager.StartWaves();
+            waveController.enabled = false;
         }
     }
 
