@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 189990608717588158}
   - component: {fileID: 2991214440301744790}
   - component: {fileID: 5051121227150513609}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: ParticlesExplotion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4845,7 +4845,7 @@ GameObject:
   - component: {fileID: 967320858443687398}
   - component: {fileID: 3133765621256292949}
   - component: {fileID: 4700798552656148788}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Explotion Blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4928,11 +4928,11 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 90113
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
+    m_Bits: 1740800
+  m_LayerOverridePriority: 1
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
@@ -4979,6 +4979,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onDataUpdatedEventsPrivate: []
+  match: 0
+  id: 0
   loadTime: 2
   stayTime: 0
   targets: []

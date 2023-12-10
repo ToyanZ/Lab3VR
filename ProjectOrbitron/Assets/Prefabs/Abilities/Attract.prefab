@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5165316187036425630}
   - component: {fileID: 1867002152014788664}
   - component: {fileID: 8012773491305424910}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Attract
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,11 +98,11 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 90113
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
+    m_Bits: 1740800
+  m_LayerOverridePriority: 1
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onDataUpdatedEventsPrivate: []
+  ignoreThis: {fileID: 0}
   match: 0
   id: 0
   loadTime: 3
@@ -265,6 +266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onDataUpdatedEventsPrivate: []
+  ignoreThis: {fileID: 0}
   match: 0
   id: 0
   loadTime: 3
@@ -407,7 +409,8 @@ MonoBehaviour:
   sender: {fileID: 0}
   rigidBody: {fileID: 5261549259650993420}
   receiver: []
-  speed: 5
+  speed: 20
   radius: 2
   attractionForce: 120
+  damagePerSecond: 0.33
   forceMode: 0

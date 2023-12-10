@@ -16,7 +16,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private InputMode inputMode = InputMode.Keyboard;
     [SerializeField] private GameObject deviceSimulator;
     public Player player;
-
+    public float enemyPauseTime = 1.5f;
+    public float enemyAttackDamage = 0.7f;
 
     private void Awake()
     {

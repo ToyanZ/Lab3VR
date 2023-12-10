@@ -39,52 +39,33 @@ public class Explotion : Ability
 
     public override void Activate()
     {
-        Instantiate(particles, transform.position, Quaternion.identity);
+        Instantiate(particles, contactPoint, Quaternion.identity);
 
-        List<Collider> colliders =  Physics.OverlapSphere(transform.position, radius).ToList();
+        List<Collider> colliders = Physics.OverlapSphere(contactPoint, radius).ToList();
 
         foreach (Collider collider in colliders)
         {
             Target target = collider.GetComponent<Target>();
-            if(target != null)
-            {
-                if (target == sender) continue;
-                else if (target.rigidBody != null)
-                {
-                    
+            if (target == null) continue;
 
+            if (target != sender) target.TakeDamage(damage);
+            if (target.rigidBody == null) continue;
 
-                    IA_Enemies enemy = target.GetComponent<IA_Enemies>();
-                    if(enemy != null) 
-                    { 
-                        currentEnemies.Add(enemy);
-                        enemy.currentSpeed = 0; 
-                    }
+            Vector2 targetPos = new Vector2(target.transform.position.x, target.transform.position.z);
+            Vector2 bulletPos = new Vector2(contactPoint.x, contactPoint.z);
 
-                    Vector2 targetPos = new Vector2(target.transform.position.x, target.transform.position.z);
-                    Vector2 bulletPos = new Vector2(transform.position.x, transform.position.z);
+            Vector2 direction = (targetPos - bulletPos).normalized * force;
+            Vector3 explotionForce = new Vector3(direction.x, jumpForce, direction.y);
 
-                    Vector2 direction = (targetPos - bulletPos).normalized * force;
-                    Vector3 explotionForce = new Vector3(direction.x, jumpForce, direction.y);
+            target.rigidBody.AddForce(explotionForce, ForceMode.Impulse);
 
-                    EnemyWalk enemyWalk = target.GetComponent<EnemyWalk>();
-                    if(enemyWalk != null) enemyWalk.Push(explotionForce);
-
-                    target.rigidBody.AddForce(explotionForce, ForceMode.Impulse);
-                    target.TakeDamage(damage);
-
-                    //if (enemy != null) { enemy.enemy.enabled = true; }
-                }
-            }
+            IA_Enemies enemy = target.GetComponent<IA_Enemies>();
+            if (enemy != null) enemy.Push(explotionForce);
         }
     }
 
     public override void Deactivate()
     {
-        foreach(IA_Enemies enemy in currentEnemies)
-        {
-            if (enemy != null) enemy.enemy.enabled = true;
-        }
         base.Deactivate();
     }
 

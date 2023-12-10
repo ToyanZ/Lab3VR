@@ -17,7 +17,7 @@ public class InstantiateEnemies : MonoBehaviour
                 Quaternion.identity);
         IA_Enemies ia_enemy = enemy.GetComponent<IA_Enemies>();
         enemy.transform.parent = gameObject.transform;
-        ia_enemy.Player = playerPosition;
+        ia_enemy.target = playerPosition;
         enemy.SetActive(false);
         return enemy;
     }

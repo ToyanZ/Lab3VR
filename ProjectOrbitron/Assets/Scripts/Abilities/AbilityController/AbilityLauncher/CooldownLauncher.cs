@@ -30,6 +30,7 @@ public class CooldownLauncher : AbilityLauncher
         
         Ability clone = Instantiate(abilities[0], GameManager.instance.player.weapon.tip.position, Quaternion.identity);
         clone.sender = sender;
+        clone.GetComponent<Trigger>().ignoreThis = sender;
 
         while(cooldown > 0)
         {

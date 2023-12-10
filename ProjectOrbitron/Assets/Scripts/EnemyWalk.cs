@@ -32,9 +32,9 @@ public class EnemyWalk : MonoBehaviour
 
     public void Push(Vector3 force)
     {
-        StartCoroutine(PauseIE(force));
+        StartCoroutine(PushIE(force));
     }
-    IEnumerator PauseIE(Vector3 force)
+    IEnumerator PushIE(Vector3 force)
     {
         state = State.Pause;
         agent.speed = 0;

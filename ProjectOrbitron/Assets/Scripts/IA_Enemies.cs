@@ -1,97 +1,124 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class IA_Enemies : MonoBehaviour
 {
-    public NavMeshAgent enemy;
-
-    public Transform Player;
-
-    public bool isAlive;
-
+    public enum State { Walking, Idle}
+    public NavMeshAgent navMeshAgent;
+    public Rigidbody rBody;
+    public Transform target;
     public Animator anim;
-    public float currentSpeed;
-
-    public int id_Attack;
+    public WaveController waveController;
 
     [Space(20)]
-    public float damage = 0.02f;
+    public int id_Attack;
+    public float startSpeed;
+    public bool isAlive;
 
-    public WaveController waveController;
+    [Space(20)]
+    public float damageMod = 0f;
+
+    private float baseDamage = 0;
+    private State state = State.Walking; 
 
     private void Start()
     {
         anim = GetComponent<Animator>();
-        currentSpeed = enemy.speed;
-
-
-        //Player = GameManager.instance.player.transform;
-
+        startSpeed = navMeshAgent.speed;
+        baseDamage = GameManager.instance.enemyAttackDamage;
+        isAlive = true;
     }
 
     private void Update()
     {
-        if(isAlive && Player != null) 
+        if (isAlive)
         {
-            //enemy.SetDestination(Player.position);
-            enemy.destination = Player.position;
+            if (HasTarget() && IsWalking()) navMeshAgent.destination = target.position;
         }
-        if (!isAlive)
-        {
-            KillEnemy();
-        }
+        else KillEnemy();
     }
+    bool HasTarget() { return target != null; }
+    bool IsWalking() { return state == State.Walking; }
+
+
+    public void Push(Vector3 force) { if (state == State.Walking) StartCoroutine(PushIE(force)); }
+    IEnumerator PushIE(Vector3 force)
+    {
+        state = State.Idle;
+        navMeshAgent.speed = 0;
+        navMeshAgent.enabled = false;
+        rBody.AddForce(force, ForceMode.Impulse);
+        yield return new WaitForSeconds(GameManager.instance.enemyPauseTime);
+        navMeshAgent.speed = startSpeed;
+        navMeshAgent.enabled = true;
+        state = State.Walking;
+    }
+    public void Pause() { if (state == State.Walking) StartCoroutine(PauseIE()); }
+    IEnumerator PauseIE()
+    {
+        state = State.Idle;
+        navMeshAgent.speed = 0;
+        navMeshAgent.enabled = false;
+        yield return new WaitForSeconds(GameManager.instance.enemyPauseTime);
+        navMeshAgent.speed = startSpeed;
+        navMeshAgent.enabled = true;
+        state = State.Walking;
+    }
+
+    private void Attack(Player player)
+    {
+        if (player != null) player.target.TakeDamage(baseDamage + damageMod);
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        Attack(collision.gameObject.GetComponent<Player>());
+    }
+    private void OnCollisionStay(Collision collision)
+    {
+        Attack(collision.gameObject.GetComponent<Player>());
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
     public void KillEnemy()
     {
         WavesManager.instance.remainingEnemies--;
         waveController.remainingEnemies--;
         isAlive = false;
         anim.SetTrigger("Death");
-        enemy.speed = 0;
+        navMeshAgent.speed = 0;
         waveController.enemiesList.Remove(this.gameObject);
         Destroy(this.gameObject);
     }
-
     public void Attack()
     {
         id_Attack = Random.Range(0, 2);
         anim.SetInteger("id_Attack", id_Attack);
 
-        if (isAlive)
-        {
-            anim.SetTrigger("Attack");
-        }
+        if (isAlive) anim.SetTrigger("Attack");
     }
-
     IEnumerator ReturnWalking()
     {
         float returnToWalk = id_Attack == 0 ? 1.5f : 1f;
-        enemy.speed = 0;
+        navMeshAgent.speed = 0;
         yield return new WaitForSeconds(returnToWalk);
-        enemy.speed = currentSpeed;
+        navMeshAgent.speed = startSpeed;
     }
 
-
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        Player player;
-        if (collision.gameObject.TryGetComponent<Player>(out player))
-        {
-            player.target.TakeDamage(damage);
-        }
-    }
-
-    private void OnCollisionStay(Collision collision)
-    {
-        Player player;
-        if (collision.gameObject.TryGetComponent<Player>(out player))
-        {
-            player.target.TakeDamage(damage);
-        }
-    }
-
+    
+    
 
 }

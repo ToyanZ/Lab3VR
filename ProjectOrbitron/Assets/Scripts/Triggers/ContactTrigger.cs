@@ -72,11 +72,18 @@ public class ContactTrigger : Trigger
         if (enterLocked) return;
 
         Target target = collision.gameObject.GetComponent<Target>();
+
         if (target != null)
         {
-            if (!targets.Contains(target)) targets.Add(target);
-            DataUpdate(this, ToIndex(Type.Enter.ToString()));
-            load = 0;
+            contactPoint = Vector3.zero;
+            if (target != ignoreThis)
+            {
+                if (!targets.Contains(target)) targets.Add(target);
+                //contactPoint = collision.GetContact(0).point;
+                contactPoint = collision.contacts[0].point;
+                DataUpdate(this, ToIndex(Type.Enter.ToString()));
+                load = 0;
+            }
         }
 
         switch (mode)

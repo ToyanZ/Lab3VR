@@ -64,10 +64,15 @@ public class OverlapTrigger : Trigger
         Target target = collision.GetComponent<Target>();
         if (target != null)
         {
-            if (!targets.Contains(target)) targets.Add(target);
-            match = target.id == id; 
-            DataUpdate(this, ToIndex(Type.Enter.ToString()));
-            load = 0;
+            contactPoint = Vector3.zero;
+            if (target != ignoreThis)
+            {
+                if (!targets.Contains(target)) targets.Add(target);
+                match = target.id == id;
+                contactPoint = collision.ClosestPointOnBounds(transform.position);
+                DataUpdate(this, ToIndex(Type.Enter.ToString()));
+                load = 0;
+            }
         }
 
         switch (mode)
