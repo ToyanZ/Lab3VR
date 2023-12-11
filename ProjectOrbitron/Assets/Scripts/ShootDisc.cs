@@ -13,7 +13,7 @@ public class ShootDisc : MonoBehaviour
     private bool shooting = false;
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -33,8 +33,9 @@ public class ShootDisc : MonoBehaviour
 
     public void shootDisc()
     {
-        GameObject clone = Instantiate(disc, new Vector3(150,150,150), Quaternion.identity);
+       
+        GameObject clone = Instantiate(disc, tip.position , disc.transform.rotation);
         Rigidbody rb = clone.GetComponent<Rigidbody>();
-        rb.AddForce(tip.forward * speed, ForceMode.Impulse);
+        rb.AddForce(tip.transform.forward * speed, ForceMode.Impulse);
     }
 }
