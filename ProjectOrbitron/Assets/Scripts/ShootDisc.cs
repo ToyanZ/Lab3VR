@@ -33,7 +33,7 @@ public class ShootDisc : MonoBehaviour
 
     public void shootDisc()
     {
-        GameObject clone = Instantiate(disc, Vector3.zero, Quaternion.identity);
+        GameObject clone = Instantiate(disc, new Vector3(150,150,150), Quaternion.identity);
         Rigidbody rb = clone.GetComponent<Rigidbody>();
         rb.AddForce(tip.forward * speed, ForceMode.Impulse);
     }

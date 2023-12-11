@@ -22,6 +22,10 @@ public class Menu : MonoBehaviour
         objectToLook = GameObject.FindGameObjectWithTag("MainCamera");
         player = GameObject.FindGameObjectWithTag("Player");
     }
+    void Awake()
+    {
+        scrollBar.GetComponent<Scrollbar>().value = 0;
+    }
 
     // Update is called once per frame
     void FixedUpdate()
