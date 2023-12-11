@@ -1259,6 +1259,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6314114525300763303, guid: a0f056ee03300134bb64f75ba4764962, type: 3}
+      propertyPath: m_Drag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6314114525300763303, guid: a0f056ee03300134bb64f75ba4764962, type: 3}
+      propertyPath: m_Mass
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7124778317387592372, guid: a0f056ee03300134bb64f75ba4764962, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1294,7 +1302,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 817620006306794621, guid: a0f056ee03300134bb64f75ba4764962, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1232991974}
   m_SourcePrefab: {fileID: 100100000, guid: a0f056ee03300134bb64f75ba4764962, type: 3}
 --- !u!1 &37051713
 GameObject:
@@ -7717,7 +7728,7 @@ MonoBehaviour:
   inputKeyName: '-'
   cooldownTime: 3
   cooldown: 0
-  cooldownModValue: 0.08
+  cooldownModValue: 0.25
   onDataUpdatedEvents:
   - name: Launched
     statIndex: 0
@@ -12094,7 +12105,7 @@ Transform:
   m_GameObject: {fileID: 630797960}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.25645795, z: 0, w: 0.96655536}
-  m_LocalPosition: {x: 5.47, y: 0.83234906, z: -17.12}
+  m_LocalPosition: {x: 5.47, y: 0.83234906, z: -21.533}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -25080,6 +25091,45 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1573597670}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1232991967 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 817620006306794621, guid: a0f056ee03300134bb64f75ba4764962, type: 3}
+  m_PrefabInstance: {fileID: 25191091}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1232991970 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 6314114525300763303, guid: a0f056ee03300134bb64f75ba4764962, type: 3}
+  m_PrefabInstance: {fileID: 25191091}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1232991974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232991967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e31f4851f5602a341875a5c36c1852b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onDataUpdatedEventsPrivate: []
+  id: 0
+  parent: {fileID: 0}
+  rigidBody: {fileID: 1232991970}
+  stats:
+  - displayName: health
+    type: 0
+    current: 0
+    max: 200
+    boolValue: 0
+    stringValue: health
+  onDataUpdatedEvents:
+  - name: HealthUpdated
+    statIndex: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &1242743921
 GameObject:
   m_ObjectHideFlags: 0
@@ -48683,9 +48733,9 @@ MonoBehaviour:
   - {fileID: 4700798552656148788, guid: 2498924dc542c0f448a4c183153c0261, type: 3}
   currentAbilityIndex: 0
   inputKeyName: '-'
-  cooldownTime: 5
+  cooldownTime: 3
   cooldown: 0
-  cooldownModValue: 0.08
+  cooldownModValue: 0.25
   onDataUpdatedEvents:
   - name: Launched
     statIndex: 0
@@ -53691,7 +53741,7 @@ MonoBehaviour:
   center: {fileID: 4741123177720538722}
   aimDirection: {x: 0, y: 0, z: 0}
   aimAngle: 0
-  shootForce: 100
+  shootForce: 130
   stats:
   - displayName: Ammo
     type: 0
@@ -53702,7 +53752,7 @@ MonoBehaviour:
   - displayName: FireRate
     type: 0
     current: 0
-    max: 0.08
+    max: 0.06
     boolValue: 1
     stringValue: fireRate
   - displayName: Reload
@@ -57039,9 +57089,9 @@ MonoBehaviour:
   - {fileID: 8012773491305424910, guid: 943cf986be67f2c4d8812a29d3d6c5e1, type: 3}
   currentAbilityIndex: 0
   inputKeyName: '-'
-  cooldownTime: 2
+  cooldownTime: 3
   cooldown: 0
-  cooldownModValue: 0.08
+  cooldownModValue: 0.25
   onDataUpdatedEvents:
   - name: Launched
     statIndex: 0

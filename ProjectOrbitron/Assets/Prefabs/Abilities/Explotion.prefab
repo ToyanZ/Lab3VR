@@ -260,7 +260,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - name: Signal
-    statIndex: 6
+    statIndex: 0
     Event:
       m_PersistentCalls:
         m_Calls: []

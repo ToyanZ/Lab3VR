@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Explorer : Ability
 {
+    public float damage = 40;
     public float dieTime = 3;
     public float speed = 40;
     public float impactForce = 30;
@@ -56,17 +57,19 @@ public class Explorer : Ability
         foreach (Target target in receiver)
         {
             if (target == null) continue;
-            target.TakeDamage(10);
+            target.TakeDamage(damage);
             if(target.rigidBody != null)
             {
                 target.rigidBody.AddForce(rigidBody.velocity.normalized * impactForce, ForceMode.Impulse);
                 break;
             }
         }
+        Deactivate();
     }
 
     public override void Deactivate()
     {
+        StopAllCoroutines();
         base.Deactivate();
     }
 

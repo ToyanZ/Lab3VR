@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5598600380676984864}
   - component: {fileID: 4342831114446630663}
   - component: {fileID: 8412629888307293096}
-  - component: {fileID: 3283928330152147720}
   - component: {fileID: 6623491876970152122}
+  - component: {fileID: 8173239317180112942}
   m_Layer: 0
   m_Name: Box (7)
   m_TagString: Untagged
@@ -107,35 +107,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3283928330152147720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 566879821868961988}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e31f4851f5602a341875a5c36c1852b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onDataUpdatedEventsPrivate: []
-  id: 0
-  parent: {fileID: 0}
-  rigidBody: {fileID: 6623491876970152122}
-  stats:
-  - displayName: health
-    type: 0
-    current: 0
-    max: 200
-    boolValue: 0
-    stringValue: health
-  onDataUpdatedEvents:
-  - name: HealthUpdated
-    statIndex: 0
-    Event:
-      m_PersistentCalls:
-        m_Calls: []
 --- !u!54 &6623491876970152122
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -163,6 +134,65 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &8173239317180112942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566879821868961988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 503cee1e43d3e5d439b110ffa363dd55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onDataUpdatedEventsPrivate: []
+  id: 0
+  parent: {fileID: 0}
+  rigidBody: {fileID: 6623491876970152122}
+  stats:
+  - displayName: health
+    type: 0
+    current: 0
+    max: 100
+    boolValue: 0
+    stringValue: health
+  dieMode: 1
+  onDataUpdatedEvents:
+  - name: HealthUpdated
+    statIndex: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8173239317180112942}
+          m_TargetAssemblyTypeName: Target, Assembly-CSharp
+          m_MethodName: Spawn
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 7503515877726963799, guid: fe277ad8d082f7c43b631b90615881e5, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - name: TargetDead
+    statIndex: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8173239317180112942}
+          m_TargetAssemblyTypeName: Target, Assembly-CSharp
+          m_MethodName: Spawn
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 7503515877726963799, guid: 3ec86d9bb69cfbd47a055624d3e41483, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &4189561420909963541
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,8 +240,8 @@ GameObject:
   - component: {fileID: 4158968839237034489}
   - component: {fileID: 1789436235774210305}
   - component: {fileID: 701242093237259408}
-  - component: {fileID: 6792616408943200978}
   - component: {fileID: 5015790639435808492}
+  - component: {fileID: 3099044033889263012}
   m_Layer: 0
   m_Name: Box (5)
   m_TagString: Untagged
@@ -305,35 +335,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6792616408943200978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4977320965743311610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e31f4851f5602a341875a5c36c1852b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onDataUpdatedEventsPrivate: []
-  id: 0
-  parent: {fileID: 0}
-  rigidBody: {fileID: 5015790639435808492}
-  stats:
-  - displayName: health
-    type: 0
-    current: 0
-    max: 200
-    boolValue: 0
-    stringValue: health
-  onDataUpdatedEvents:
-  - name: HealthUpdated
-    statIndex: 0
-    Event:
-      m_PersistentCalls:
-        m_Calls: []
 --- !u!54 &5015790639435808492
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -361,6 +362,65 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &3099044033889263012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4977320965743311610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 503cee1e43d3e5d439b110ffa363dd55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onDataUpdatedEventsPrivate: []
+  id: 0
+  parent: {fileID: 0}
+  rigidBody: {fileID: 5015790639435808492}
+  stats:
+  - displayName: health
+    type: 0
+    current: 0
+    max: 100
+    boolValue: 0
+    stringValue: health
+  dieMode: 1
+  onDataUpdatedEvents:
+  - name: HealthUpdated
+    statIndex: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4977320965743311610}
+          m_TargetAssemblyTypeName: Target, Assembly-CSharp
+          m_MethodName: Spawn
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 7503515877726963799, guid: fe277ad8d082f7c43b631b90615881e5, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - name: TargetDead
+    statIndex: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3099044033889263012}
+          m_TargetAssemblyTypeName: Target, Assembly-CSharp
+          m_MethodName: Spawn
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 7503515877726963799, guid: 3ec86d9bb69cfbd47a055624d3e41483, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &5192399906688559366
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,8 +433,8 @@ GameObject:
   - component: {fileID: 5608739707371767529}
   - component: {fileID: 3410365717369019288}
   - component: {fileID: 7899640255796091174}
-  - component: {fileID: 7758937230190174523}
   - component: {fileID: 327508572301455825}
+  - component: {fileID: 18958841987834133}
   m_Layer: 0
   m_Name: Box (8)
   m_TagString: Untagged
@@ -468,35 +528,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7758937230190174523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5192399906688559366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e31f4851f5602a341875a5c36c1852b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onDataUpdatedEventsPrivate: []
-  id: 0
-  parent: {fileID: 0}
-  rigidBody: {fileID: 327508572301455825}
-  stats:
-  - displayName: health
-    type: 0
-    current: 0
-    max: 200
-    boolValue: 0
-    stringValue: health
-  onDataUpdatedEvents:
-  - name: HealthUpdated
-    statIndex: 0
-    Event:
-      m_PersistentCalls:
-        m_Calls: []
 --- !u!54 &327508572301455825
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -524,6 +555,65 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &18958841987834133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5192399906688559366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 503cee1e43d3e5d439b110ffa363dd55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onDataUpdatedEventsPrivate: []
+  id: 0
+  parent: {fileID: 0}
+  rigidBody: {fileID: 327508572301455825}
+  stats:
+  - displayName: health
+    type: 0
+    current: 0
+    max: 100
+    boolValue: 0
+    stringValue: health
+  dieMode: 1
+  onDataUpdatedEvents:
+  - name: HealthUpdated
+    statIndex: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 18958841987834133}
+          m_TargetAssemblyTypeName: Target, Assembly-CSharp
+          m_MethodName: Spawn
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 7503515877726963799, guid: fe277ad8d082f7c43b631b90615881e5, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - name: TargetDead
+    statIndex: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 18958841987834133}
+          m_TargetAssemblyTypeName: Target, Assembly-CSharp
+          m_MethodName: Spawn
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 7503515877726963799, guid: 3ec86d9bb69cfbd47a055624d3e41483, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &8985339930886182993
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,8 +626,8 @@ GameObject:
   - component: {fileID: 2088251838963428901}
   - component: {fileID: 6911292191202031834}
   - component: {fileID: 1196070172311635660}
-  - component: {fileID: 204579329126266552}
   - component: {fileID: 4246053810553817030}
+  - component: {fileID: 4276718788670720937}
   m_Layer: 0
   m_Name: Box (6)
   m_TagString: Untagged
@@ -631,35 +721,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &204579329126266552
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8985339930886182993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e31f4851f5602a341875a5c36c1852b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onDataUpdatedEventsPrivate: []
-  id: 0
-  parent: {fileID: 0}
-  rigidBody: {fileID: 4246053810553817030}
-  stats:
-  - displayName: health
-    type: 0
-    current: 0
-    max: 200
-    boolValue: 0
-    stringValue: health
-  onDataUpdatedEvents:
-  - name: HealthUpdated
-    statIndex: 0
-    Event:
-      m_PersistentCalls:
-        m_Calls: []
 --- !u!54 &4246053810553817030
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -687,3 +748,62 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &4276718788670720937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8985339930886182993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 503cee1e43d3e5d439b110ffa363dd55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onDataUpdatedEventsPrivate: []
+  id: 0
+  parent: {fileID: 0}
+  rigidBody: {fileID: 4246053810553817030}
+  stats:
+  - displayName: health
+    type: 0
+    current: 0
+    max: 100
+    boolValue: 0
+    stringValue: health
+  dieMode: 1
+  onDataUpdatedEvents:
+  - name: HealthUpdated
+    statIndex: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4276718788670720937}
+          m_TargetAssemblyTypeName: Target, Assembly-CSharp
+          m_MethodName: Spawn
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 7503515877726963799, guid: fe277ad8d082f7c43b631b90615881e5, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - name: TargetDead
+    statIndex: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4276718788670720937}
+          m_TargetAssemblyTypeName: Target, Assembly-CSharp
+          m_MethodName: Spawn
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 7503515877726963799, guid: 3ec86d9bb69cfbd47a055624d3e41483, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

@@ -8,10 +8,12 @@ public class Attract : Ability
     public float speed = 80;
     public float radius = 3;
     public float attractionForce = 30;
-    public float damagePerSecond = 0.33f;
+    public float damagePerSecond = 23.3f;
+    public float dieTime = 7;
     public ForceMode forceMode = ForceMode.Impulse;
     Vector3 startVelocity;
 
+    float counter = 0;
     private void Start()
     {
         startVelocity = GameManager.instance.player.weapon.GetAimDirection().normalized;
@@ -20,6 +22,8 @@ public class Attract : Ability
     private void FixedUpdate()
     {
         if (!rigidBody.isKinematic) rigidBody.velocity = startVelocity * speed;
+        counter += Time.fixedDeltaTime;
+        if(counter >= dieTime) { Destroy(gameObject); }
     }
 
 

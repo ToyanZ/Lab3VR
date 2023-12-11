@@ -14,4 +14,13 @@ public abstract class Target : InterfaceData
         if(gameObject != null) Destroy(gameObject);
         else Destroy(this.gameObject);
     }
+
+    public void Spawn(GameObject go)
+    {
+        Instantiate(go, transform.position, Quaternion.identity);
+    }
+    public void SpawnAsChild(GameObject go)
+    {
+        Instantiate(go, transform.position, Quaternion.identity, transform);
+    }
 }

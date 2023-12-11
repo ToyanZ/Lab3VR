@@ -157,6 +157,7 @@ MonoBehaviour:
   targets: []
   mode: 0
   signal: 0
+  contactPoint: {x: 0, y: 0, z: 0}
   onDataUpdatedEvents:
   - name: Enter
     statIndex: 0
@@ -274,6 +275,7 @@ MonoBehaviour:
   targets: []
   mode: 0
   signal: 0
+  contactPoint: {x: 0, y: 0, z: 0}
   onDataUpdatedEvents:
   - name: Enter
     statIndex: 0
@@ -341,7 +343,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - name: Load
-    statIndex: 1
+    statIndex: 0
     Event:
       m_PersistentCalls:
         m_Calls:
@@ -358,7 +360,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - name: LoadDone
-    statIndex: 2
+    statIndex: 0
     Event:
       m_PersistentCalls:
         m_Calls:
@@ -375,22 +377,22 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - name: Stay
-    statIndex: 3
+    statIndex: 1
     Event:
       m_PersistentCalls:
         m_Calls: []
   - name: StayDone
-    statIndex: 4
+    statIndex: 1
     Event:
       m_PersistentCalls:
         m_Calls: []
   - name: Exit
-    statIndex: 5
+    statIndex: 0
     Event:
       m_PersistentCalls:
         m_Calls: []
   - name: Signal
-    statIndex: 6
+    statIndex: 0
     Event:
       m_PersistentCalls:
         m_Calls: []
@@ -409,8 +411,9 @@ MonoBehaviour:
   sender: {fileID: 0}
   rigidBody: {fileID: 5261549259650993420}
   receiver: []
+  contactPoint: {x: 0, y: 0, z: 0}
   speed: 20
   radius: 2
   attractionForce: 120
-  damagePerSecond: 0.33
+  damagePerSecond: 23.34
   forceMode: 0

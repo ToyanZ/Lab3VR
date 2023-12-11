@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PolygonScifiSpace_Material_01_A
+  m_Name: PolygonScifiSpace_CustomMat_Green
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -20,7 +20,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: 
+  m_LockedProperties: _ParallaxMap
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -67,9 +67,9 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0.2
+    - _Glossiness: 1
     - _GlossyReflections: 1
-    - _Metallic: 0.079
+    - _Metallic: 0.529
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
@@ -79,6 +79,6 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0.5283019, g: 0.50537556, b: 0.50537556, a: 1}
+    - _Color: {r: 0.18396229, g: 1, b: 0.36957094, a: 1}
+    - _EmissionColor: {r: 1.0588236, g: 1.0117648, b: 1.0117648, a: 1}
   m_BuildTextureStacks: []

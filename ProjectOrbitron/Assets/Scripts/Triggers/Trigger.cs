@@ -45,7 +45,8 @@ public abstract class Trigger : InterfaceData
 
     public int ToIndex(string name)
     {
-        int idex = onDataUpdatedEventsPrivate.IndexOf(onDataUpdatedEventsPrivate.Find(x => x.name == name));
+        OnDataUpdated newEvent = onDataUpdatedEventsPrivate.Find(x => x.name == name);
+        int idex = onDataUpdatedEventsPrivate.IndexOf(newEvent);
         
         return idex;
     }

@@ -50,7 +50,7 @@ public class DynamicTarget : PlayableTarget
                 case DieMode.Destroy:
                     if (parent != null) Destroy(parent, 1f);
                     else Destroy(gameObject, 1f);
-                    print(name + " dead.");
+                    //print(name + " dead.");
                     break;
                 case DieMode.Deactivate:
                     if (parent != null) parent.SetActive(false);
