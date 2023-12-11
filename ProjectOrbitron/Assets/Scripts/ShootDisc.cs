@@ -27,14 +27,13 @@ public class ShootDisc : MonoBehaviour
     {
         if (shooting)
         {
-            print("DIIISSCCC");
             shootDisc();
         }
     }
 
     public void shootDisc()
     {
-        GameObject clone = Instantiate(disc, tip.position, Quaternion.identity);
+        GameObject clone = Instantiate(disc, Vector3.zero, Quaternion.identity);
         Rigidbody rb = clone.GetComponent<Rigidbody>();
         rb.AddForce(tip.forward * speed, ForceMode.Impulse);
     }

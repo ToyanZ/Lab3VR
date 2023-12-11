@@ -1748,7 +1748,7 @@ Transform:
   m_GameObject: {fileID: 1526185019371039930}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.1292}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3753,7 +3753,7 @@ MonoBehaviour:
   tip: {fileID: 3756486018398110506}
   disc: {fileID: 6929092519576047375, guid: 811e69c8a0bda6a4b91fc0e9c327531a, type: 3}
   speed: 5
-  shootInputAction: {fileID: -5982496924579745919, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  shootInputAction: {fileID: -6131295136447488360, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   shootInputActionSim: {fileID: 0}
 --- !u!1 &2547658117086319187
 GameObject:
