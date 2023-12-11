@@ -67,9 +67,9 @@ public class Menu : MonoBehaviour
         player.GetComponent<DynamicTarget>().SetHealth(healthPlayer);   
     }
 
-    public void MicroHealthbutton(float amount, int cycles)
+    public void MicroHealthbutton(float amount)
     {
-        for(int i = 0; i < cycles; i++)
+        for(int i = 0; i < 3; i++)
         {
             float healthPlayer;
             healthPlayer = player.GetComponent<DynamicTarget>().GetHealth() + amount;
@@ -83,11 +83,15 @@ public class Menu : MonoBehaviour
     }
     public void LoadTitle()
     {
-        SceneManager.LoadScene("Title");
+        SceneManager.LoadScene("Tittle");
     }
 
     public void Quit()
     {
         Application.Quit();
+    }
+    public void LoadLVL1()
+    {
+        SceneManager.LoadScene("Level 01");
     }
 }
