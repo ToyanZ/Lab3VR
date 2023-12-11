@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.009288154, g: 0.009797151, b: 0.012662924, a: 1}
+  m_IndirectSpecularColor: {r: 0.035828054, g: 0.03539488, b: 0.050288938, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -219,7 +219,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4885778898748748, guid: a00811e2d49c13c418c62eb66fc68ace, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.4477577
+      value: -2.934
       objectReference: {fileID: 0}
     - target: {fileID: 4885778898748748, guid: a00811e2d49c13c418c62eb66fc68ace, type: 3}
       propertyPath: m_LocalPosition.y
@@ -10318,7 +10318,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4885778898748748, guid: a00811e2d49c13c418c62eb66fc68ace, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.176262
+      value: -10.144
       objectReference: {fileID: 0}
     - target: {fileID: 4885778898748748, guid: a00811e2d49c13c418c62eb66fc68ace, type: 3}
       propertyPath: m_LocalPosition.y
@@ -10326,7 +10326,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4885778898748748, guid: a00811e2d49c13c418c62eb66fc68ace, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.538
+      value: -4.143
       objectReference: {fileID: 0}
     - target: {fileID: 4885778898748748, guid: a00811e2d49c13c418c62eb66fc68ace, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11180,7 +11180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4885778898748748, guid: a00811e2d49c13c418c62eb66fc68ace, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.5381165
+      value: -4.057
       objectReference: {fileID: 0}
     - target: {fileID: 4885778898748748, guid: a00811e2d49c13c418c62eb66fc68ace, type: 3}
       propertyPath: m_LocalRotation.w
@@ -14157,11 +14157,6 @@ PrefabInstance:
 --- !u!4 &977912077 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4950033287718502, guid: ceddc97abfdd06647918f15b13cfac6c, type: 3}
-  m_PrefabInstance: {fileID: 977912076}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &977912078 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 7579016984367745113, guid: ceddc97abfdd06647918f15b13cfac6c, type: 3}
   m_PrefabInstance: {fileID: 977912076}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &978187364
@@ -27337,11 +27332,12 @@ MonoBehaviour:
   target: {fileID: 1901013499}
   weapon: {fileID: 1901013497}
   abilityLauncher: {fileID: 0}
-  shootInputActionSim: {fileID: -2439264783773714294, guid: 0be0028c24f2a4c14a96b6aa39055933, type: 3}
   shootInputAction: {fileID: 187161793506945269, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  gripInputAction: {fileID: 0}
+  holdGrip: 0
+  runInputAction: {fileID: 0}
+  shootInputActionSim: {fileID: -2439264783773714294, guid: 0be0028c24f2a4c14a96b6aa39055933, type: 3}
   holdInputActionSim: {fileID: 0}
-  holdInputAction: {fileID: 0}
-  pressing: 0
 --- !u!114 &1901013499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28516,8 +28512,8 @@ MonoBehaviour:
   waveEnable: 0
   limitZone: {fileID: 1495466509}
   animDoors:
-  - {fileID: 2093605000}
-  - {fileID: 977912078}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &1982172459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30974,11 +30970,6 @@ PrefabInstance:
 --- !u!4 &2093604999 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4950033287718502, guid: ceddc97abfdd06647918f15b13cfac6c, type: 3}
-  m_PrefabInstance: {fileID: 2093604998}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &2093605000 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 7579016984367745113, guid: ceddc97abfdd06647918f15b13cfac6c, type: 3}
   m_PrefabInstance: {fileID: 2093604998}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &2096436946 stripped
