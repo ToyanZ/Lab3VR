@@ -15,6 +15,7 @@ public class Menu : MonoBehaviour
     public GameObject rightButton;
     public GameObject leftButton;
     public GameObject player;
+    public GameObject disc;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +33,7 @@ public class Menu : MonoBehaviour
     {
         LookAtObject();
         UpdateColorButton();
+        setLocationMenu();
     }
     public void LookAtObject()
     {
@@ -73,6 +75,11 @@ public class Menu : MonoBehaviour
             healthPlayer = player.GetComponent<DynamicTarget>().GetHealth() + amount;
             player.GetComponent<DynamicTarget>().SetHealth(healthPlayer);
         }
+    }
+
+    public void setLocationMenu()
+    {
+        objectThatLook.transform.position = new Vector3(disc.transform.position.x, disc.transform.position.y + 1, disc.transform.position.z);
     }
     public void LoadTitle()
     {

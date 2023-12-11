@@ -33,9 +33,12 @@ public class ShootDisc : MonoBehaviour
 
     public void shootDisc()
     {
-       
+        foreach ( GameObject disc in GameObject.FindGameObjectsWithTag("Disc"))
+        {
+            Destroy(disc);
+        }
         GameObject clone = Instantiate(disc, tip.position , disc.transform.rotation);
         Rigidbody rb = clone.GetComponent<Rigidbody>();
-        rb.AddForce(tip.transform.forward * speed, ForceMode.Impulse);
+        rb.AddForce(tip.forward * speed, ForceMode.Impulse);
     }
 }

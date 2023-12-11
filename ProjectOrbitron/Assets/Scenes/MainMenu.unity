@@ -235,7 +235,7 @@ PrefabInstance:
       objectReference: {fileID: 1040717793}
     - target: {fileID: 6174297879349449607, guid: aba28e4005156fa43985c92171257848, type: 3}
       propertyPath: speed
-      value: 0.1
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6174297879349449607, guid: aba28e4005156fa43985c92171257848, type: 3}
       propertyPath: shootInputAction
