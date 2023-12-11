@@ -16,8 +16,8 @@ GameObject:
   - component: {fileID: 282516885096967866}
   - component: {fileID: 3640657437192575298}
   - component: {fileID: 4649210157202029823}
-  m_Layer: 0
-  m_Name: AbilityDamage
+  m_Layer: 15
+  m_Name: WeaponBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,11 +99,11 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 90113
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
+    m_Bits: 1740800
+  m_LayerOverridePriority: 1
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
@@ -161,32 +161,32 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - name: Load
-    statIndex: 0
+    statIndex: 1
     Event:
       m_PersistentCalls:
         m_Calls: []
   - name: LoadDone
-    statIndex: 0
+    statIndex: 2
     Event:
       m_PersistentCalls:
         m_Calls: []
   - name: Stay
-    statIndex: 1
+    statIndex: 3
     Event:
       m_PersistentCalls:
         m_Calls: []
   - name: StayDone
-    statIndex: 1
+    statIndex: 4
     Event:
       m_PersistentCalls:
         m_Calls: []
   - name: Exit
-    statIndex: 0
+    statIndex: 5
     Event:
       m_PersistentCalls:
         m_Calls: []
   - name: Signal
-    statIndex: 0
+    statIndex: 6
     Event:
       m_PersistentCalls:
         m_Calls: []
@@ -339,7 +339,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1186776201711669279}
   - component: {fileID: 422941127477371246}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}

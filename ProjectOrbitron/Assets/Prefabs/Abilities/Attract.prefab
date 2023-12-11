@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 7472520804622526129}
   - component: {fileID: 5261549259650993420}
   - component: {fileID: 5165316187036425630}
+  - component: {fileID: 1867002152014788664}
   - component: {fileID: 8012773491305424910}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Attract
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,12 +98,12 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 90113
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+    m_Bits: 1740800
+  m_LayerOverridePriority: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -116,7 +117,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6536379195693154549}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 60
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -142,12 +143,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6536379195693154549}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1d0da7d55ad66944b8f5b091d64f4563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   onDataUpdatedEventsPrivate: []
+  ignoreThis: {fileID: 0}
   match: 0
   id: 0
   loadTime: 3
@@ -155,6 +157,7 @@ MonoBehaviour:
   targets: []
   mode: 0
   signal: 0
+  contactPoint: {x: 0, y: 0, z: 0}
   onDataUpdatedEvents:
   - name: Enter
     statIndex: 0
@@ -246,6 +249,153 @@ MonoBehaviour:
     Event:
       m_PersistentCalls:
         m_Calls: []
+  - name: Signal
+    statIndex: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+--- !u!114 &1867002152014788664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6536379195693154549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71899a0a22c95894da6096346b7b76e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onDataUpdatedEventsPrivate: []
+  ignoreThis: {fileID: 0}
+  match: 0
+  id: 0
+  loadTime: 3
+  stayTime: 0
+  targets: []
+  mode: 0
+  signal: 0
+  contactPoint: {x: 0, y: 0, z: 0}
+  onDataUpdatedEvents:
+  - name: Enter
+    statIndex: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8012773491305424910}
+          m_TargetAssemblyTypeName: Attract, Assembly-CSharp
+          m_MethodName: InvokeAbility
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1867002152014788664}
+          m_TargetAssemblyTypeName: Trigger, Assembly-CSharp
+          m_MethodName: EnterLock
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1867002152014788664}
+          m_TargetAssemblyTypeName: Trigger, Assembly-CSharp
+          m_MethodName: ExitLock
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 8012773491305424910}
+          m_TargetAssemblyTypeName: Attract, Assembly-CSharp
+          m_MethodName: Activate
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1867002152014788664}
+          m_TargetAssemblyTypeName: Trigger, Assembly-CSharp
+          m_MethodName: Spawn
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 4023855614867163437, guid: 426b8fcad14015f49bac8d73e95d3a16, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - name: Load
+    statIndex: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8012773491305424910}
+          m_TargetAssemblyTypeName: Attract, Assembly-CSharp
+          m_MethodName: Activate
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - name: LoadDone
+    statIndex: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8012773491305424910}
+          m_TargetAssemblyTypeName: Attract, Assembly-CSharp
+          m_MethodName: Deactivate
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - name: Stay
+    statIndex: 1
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+  - name: StayDone
+    statIndex: 1
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+  - name: Exit
+    statIndex: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+  - name: Signal
+    statIndex: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!114 &8012773491305424910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,6 +411,9 @@ MonoBehaviour:
   sender: {fileID: 0}
   rigidBody: {fileID: 5261549259650993420}
   receiver: []
-  speed: 5
-  radius: 1
-  attractionForce: 15
+  contactPoint: {x: 0, y: 0, z: 0}
+  speed: 20
+  radius: 2
+  attractionForce: 120
+  damagePerSecond: 23.34
+  forceMode: 0

@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 512347603031380986}
   - component: {fileID: 231923642326130286}
   - component: {fileID: 967320858443687398}
-  - component: {fileID: 3133765621256292949}
   - component: {fileID: 4700798552656148788}
-  m_Layer: 0
+  - component: {fileID: 4918242484964260858}
+  m_Layer: 15
   m_Name: Explotion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,12 +98,12 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 90113
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+    m_Bits: 1740800
+  m_LayerOverridePriority: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -117,7 +117,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5470729695513549329}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 60
   m_Drag: 0.7
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -136,7 +136,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &3133765621256292949
+--- !u!114 &4700798552656148788
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -145,15 +145,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 5470729695513549329}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d0da7d55ad66944b8f5b091d64f4563, type: 3}
+  m_Script: {fileID: 11500000, guid: f92b4b16b684795479fc3a851acdece3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sender: {fileID: 0}
+  rigidBody: {fileID: 967320858443687398}
+  receiver: []
+  contactPoint: {x: 0, y: 0, z: 0}
+  radius: 2
+  damage: 70
+  speed: 20
+  force: 25
+  jumpForce: 20
+  particles: {fileID: 552954195094119867, guid: 7e0aa4cf4aaac134abba64086c8d8db9, type: 3}
+--- !u!114 &4918242484964260858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5470729695513549329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71899a0a22c95894da6096346b7b76e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   onDataUpdatedEventsPrivate: []
+  ignoreThis: {fileID: 0}
+  match: 0
+  id: 0
   loadTime: 2
   stayTime: 0
   targets: []
   mode: 0
   signal: 0
+  contactPoint: {x: 0, y: 0, z: 0}
   onDataUpdatedEvents:
   - name: Enter
     statIndex: 0
@@ -161,24 +187,24 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 4700798552656148788}
-          m_TargetAssemblyTypeName: Explotion, Assembly-CSharp
-          m_MethodName: InvokeAbility
-          m_Mode: 1
+          m_TargetAssemblyTypeName: Ability, Assembly-CSharp
+          m_MethodName: SetTriggerPos
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 4918242484964260858}
+            m_ObjectArgumentAssemblyTypeName: Trigger, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
         - m_Target: {fileID: 4700798552656148788}
-          m_TargetAssemblyTypeName: Ability, Assembly-CSharp
-          m_MethodName: SetTargets
-          m_Mode: 2
+          m_TargetAssemblyTypeName: Explotion, Assembly-CSharp
+          m_MethodName: InvokeAbility
+          m_Mode: 1
           m_Arguments:
-            m_ObjectArgument: {fileID: 3133765621256292949}
-            m_ObjectArgumentAssemblyTypeName: Trigger, Assembly-CSharp
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -238,27 +264,6 @@ MonoBehaviour:
     Event:
       m_PersistentCalls:
         m_Calls: []
---- !u!114 &4700798552656148788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5470729695513549329}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f92b4b16b684795479fc3a851acdece3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sender: {fileID: 0}
-  rigidBody: {fileID: 967320858443687398}
-  receiver: []
-  radius: 2
-  damage: 70
-  speed: 5
-  force: 30
-  jumpForce: 1000
-  particles: {fileID: 552954195094119867, guid: 7e0aa4cf4aaac134abba64086c8d8db9, type: 3}
 --- !u!1 &8698640985754465199
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,7 +275,7 @@ GameObject:
   - component: {fileID: 4330908377895103083}
   - component: {fileID: 1673769946573872707}
   - component: {fileID: 8692420847975733532}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: ParticlesExplotion
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -7,12 +7,8 @@ public class TriggerMaster : MonoBehaviour
 {
     public List<Trigger> triggers;
     public UnityEvent OnCompleted;
-    [SerializeField] private bool completed = true;
+    [SerializeField] private bool completed = false;
 
-    private void Start()
-    {
-        completed = true;
-    }
     public void UpdateTMaster()
     {
         completed = true;

@@ -19,7 +19,7 @@ public class SpawnEnemies : MonoBehaviour
     IEnumerator SpawnNewEnemy() 
     {
         GameObject enemy = Instantiate(enemies[Random.Range(0, enemies.Length)], spawnPositions[Random.Range(0, spawnPositions.Length)].position, Quaternion.identity);
-        enemy.GetComponent<IA_Enemies>().Player = playerPosition;
+        enemy.GetComponent<IA_Enemies>().target = playerPosition;
         yield return new WaitForSeconds(0.5f);
         if(remainingEnemiesSpawn > 0) StartCoroutine("SpawnNewEnemy");
         remainingEnemiesSpawn--;

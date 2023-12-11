@@ -6,6 +6,7 @@ using UnityEngine.Events;
 
 public abstract class Trigger : InterfaceData
 {
+    public Target ignoreThis;
     public bool match = false;
     public int id = 0;
     public enum Type { Enter, Load, LoadDone, Stay, StayDone, Exit, Signal}
@@ -27,6 +28,7 @@ public abstract class Trigger : InterfaceData
 
     public Mode mode = Mode.Pulse;
     public bool signal = false;
+    [HideInInspector] public Vector3 contactPoint = Vector3.zero;
 
     public Target GetLastTarget()
     {
@@ -43,12 +45,42 @@ public abstract class Trigger : InterfaceData
 
     public int ToIndex(string name)
     {
-        int idex = onDataUpdatedEventsPrivate.IndexOf(onDataUpdatedEventsPrivate.Find(x => x.name == name));
+        OnDataUpdated newEvent = onDataUpdatedEventsPrivate.Find(x => x.name == name);
+        int idex = onDataUpdatedEventsPrivate.IndexOf(newEvent);
         
         return idex;
     }
-    public void Print(string message)
+    public void PrintSome(string message)
     {
-        Debug.Log("Inspector Message [" + message + "]");
+        if(message == "")
+        {
+            if(targets.Count >0)
+            {
+                if (targets[0] != null) Debug.Log("Inspector Message [" + targets[0].name + "]");
+            }
+            
+        }
+        else
+        {
+            Debug.Log("Inspector Message [" + message + "]");
+        }
+    }
+    public void AutoDestroy(GameObject go)
+    {
+        Destroy(go);
+    }
+    public void Spawn(GameObject go)
+    {
+        Instantiate(go, transform.position, Quaternion.identity);
+    }
+    public void SpawnAsChild(GameObject go)
+    {
+        Instantiate(go, transform.position, Quaternion.identity, transform);
+    }
+
+
+    public void StopHere()
+    {
+        Debug.Break();
     }
 }

@@ -12,21 +12,21 @@ TagManager:
   - 
   - Water
   - UI
-  - Wall
-  - Enemy
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - Player
-  - Controller
-  - LimitPlayer
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Environment
+  - Enemy
+  - Ability
+  - ContactTrigger
+  - OverlapTrigger
+  - InGameUI  Interactor
+  - InGameUI
+  - InGameUI Trigger
   - 
   - 
   - 

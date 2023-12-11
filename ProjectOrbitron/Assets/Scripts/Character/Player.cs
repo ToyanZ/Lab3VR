@@ -9,31 +9,33 @@ public class Player : MonoBehaviour
     public CooldownLauncher abilityLauncher;
 
     [Space(20)]
-    public InputActionReference shootInputActionSim;
     public InputActionReference shootInputAction;
+    [Space(10)]
+    public InputActionReference gripInputAction;
+    public bool holdGrip = false;
+    [Space(10)]
+    public InputActionReference runInputAction;
 
-    [Space(20)]
+
+    [Space(40)]
+    public InputActionReference shootInputActionSim;
     public InputActionReference holdInputActionSim;
-    public InputActionReference holdInputAction;
 
-    public bool pressing = false;
 
-    [Space(20)]
-    public InputControls inputActions;
 
     
     private bool shooting = false;
     private void Update()
     {
-        if (!GameManager.instance.useSimulator)
+        if (GameManager.instance.PlayingWithVR())
         {
             shooting = shootInputAction.action.IsPressed(); 
-            pressing = holdInputAction.action.IsPressed();
+            holdGrip = gripInputAction.action.IsPressed();
         }
         else
         {
             shooting = shootInputActionSim.action.IsPressed();
-            pressing = holdInputActionSim.action.IsPressed();
+            holdGrip = holdInputActionSim.action.IsPressed();
         }
     }
 

@@ -5,7 +5,7 @@ public class Door : MonoBehaviour
     public Transform start;
     public Transform end;
     public Transform body;
-    public float time = 0.1f;
+    public float time = 0.2f;
     public bool open = false;
     private Vector3 velocity;
 

@@ -21,10 +21,9 @@ public class ContactTrigger : Trigger
     {
         targets = new List<Target>();
         onDataUpdatedEventsPrivate = onDataUpdatedEvents;
-        //if (useGlobalLoadTime) loadTime = GameManager.instance.triggerLoadTime;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (targets.Count > 0)
         {
@@ -32,7 +31,7 @@ public class ContactTrigger : Trigger
             {
                 if (loadingLocked) return;
 
-                load += Time.deltaTime;
+                load += Time.fixedDeltaTime;
                 DataUpdate(this, ToIndex(Type.Load.ToString()));
                 if (load >= loadTime) DataUpdate(this, ToIndex(Type.LoadDone.ToString()));
             }
@@ -46,7 +45,7 @@ public class ContactTrigger : Trigger
                 }
                 else if (stay < stayTime)
                 {
-                    stay += Time.deltaTime;
+                    stay += Time.fixedDeltaTime;
                     DataUpdate(this, ToIndex(Type.Stay.ToString()));
 
                     if (stay > stayTime) DataUpdate(this, ToIndex(Type.StayDone.ToString())); ;
@@ -73,11 +72,18 @@ public class ContactTrigger : Trigger
         if (enterLocked) return;
 
         Target target = collision.gameObject.GetComponent<Target>();
+
         if (target != null)
         {
-            if (!targets.Contains(target)) targets.Add(target);
-            DataUpdate(this, ToIndex(Type.Enter.ToString()));
-            load = 0;
+            contactPoint = Vector3.zero;
+            if (target != ignoreThis)
+            {
+                if (!targets.Contains(target)) targets.Add(target);
+                //contactPoint = collision.GetContact(0).point;
+                contactPoint = collision.contacts[0].point;
+                DataUpdate(this, ToIndex(Type.Enter.ToString()));
+                load = 0;
+            }
         }
 
         switch (mode)

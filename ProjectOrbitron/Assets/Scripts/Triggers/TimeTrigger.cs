@@ -10,6 +10,7 @@ public class TimeTrigger : Trigger
 
     public float time = 0;
     float current = 0;
+    public bool playOnStart = true;
 
     [Space(20)]
     public List<OnDataUpdated> onDataUpdatedEvents = new List<OnDataUpdated>
@@ -19,20 +20,42 @@ public class TimeTrigger : Trigger
         new OnDataUpdated("End", 0, new UnityEvent<InterfaceData>())
     };
 
+    private bool counting = false;
+
     private void Start()
     {
+
         onDataUpdatedEventsPrivate = onDataUpdatedEvents;
-        DataUpdate(this, 0);
+
+        if (playOnStart)
+        {
+            Begin();
+        }
     }
 
-    private void Update()
+    public void Begin()
     {
-        if (current >= time) return;
+        if (counting) return;
+        DataUpdate(this, 0);
+        StartCoroutine(Counter());
+    }
 
-        current += Time.deltaTime;
 
-        if (current < time) DataUpdate(this, 1);
-        else DataUpdate(this, 2);
+    IEnumerator Counter()
+    {
+        counting = true;
+        while(current < time)
+        {
+            current += Time.deltaTime;
+
+            if (current < time) DataUpdate(this, 1);
+            else
+            {
+                match = true;
+                DataUpdate(this, 2);
+            }
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
     }
 
 

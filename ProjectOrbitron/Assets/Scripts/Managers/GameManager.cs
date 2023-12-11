@@ -1,24 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
     public enum GameState { None, MainMenu, Match}
+    public enum InputMode { Keyboard, VR}
     public static GameManager instance;
 
     [SerializeField] private GameState state;
 
     [Space(10)]
-    public bool useSimulator;
+    [SerializeField] private InputMode inputMode = InputMode.Keyboard;
     [SerializeField] private GameObject deviceSimulator;
     public Player player;
-
-    public UnityEvent gameEvent;
-
-
-
+    public float enemyPauseTime = 1.5f;
+    public float enemyAttackDamage = 0.7f;
 
     private void Awake()
     {
@@ -30,13 +29,12 @@ public class GameManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
-            gameEvent?.Invoke();
         }
     }
 
     private void Start()
     {
-        if(!useSimulator) deviceSimulator.SetActive(false);
+        if(inputMode == InputMode.VR) deviceSimulator.SetActive(false);
     }
 
     private void Update()
@@ -57,5 +55,8 @@ public class GameManager : MonoBehaviour
         state = newState;
     }
 
-
+    public bool PlayingWithVR()
+    {
+        return inputMode == InputMode.VR;
+    }
 }
