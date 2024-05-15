@@ -10,11 +10,13 @@ public class Spawner : MonoBehaviour
     public float spawnRate = 0.3f;
     public bool autoSpawn = false;
     private List<GameObject> list;
-
+    private List<GameObject> spawned;
+    int limit = 10;
 
     private void Start()
     {
         if(autoSpawn) Refill();
+        spawned = new List<GameObject>();
     }
 
     private void FixedUpdate()
@@ -62,9 +64,15 @@ public class Spawner : MonoBehaviour
     }
     IEnumerator SpawnIE()
     {
+        for(int i =  0; i < spawned.Count; i++)
+        {
+            Destroy(spawned[i]);
+        }
+        spawned = new List<GameObject>();
         for (int i = 0; i < count; i++)
         {
-            Instantiate(prefab, GetPosition(), Quaternion.identity, transform);
+            GameObject clone = Instantiate(prefab, GetPosition(), Quaternion.identity, transform);
+            spawned.Add(clone);
             yield return new WaitForSeconds(spawnRate);
         }
     }

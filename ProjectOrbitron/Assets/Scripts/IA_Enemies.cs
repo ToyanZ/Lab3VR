@@ -95,12 +95,12 @@ public class IA_Enemies : MonoBehaviour
 
     public void KillEnemy()
     {
-        WavesManager.instance.remainingEnemies--;
-        waveController.remainingEnemies--;
+        if(WavesManager.instance != null) WavesManager.instance.remainingEnemies--;
+        if (waveController != null) waveController.remainingEnemies--;
         isAlive = false;
         anim.SetTrigger("Death");
         navMeshAgent.speed = 0;
-        waveController.enemiesList.Remove(this.gameObject);
+        if (waveController != null) waveController.enemiesList.Remove(this.gameObject);
         Destroy(this.gameObject);
     }
     public void Attack()
