@@ -413,7 +413,8 @@ MonoBehaviour:
   receiver: []
   contactPoint: {x: 0, y: 0, z: 0}
   speed: 20
-  radius: 2
-  attractionForce: 120
+  radius: 3
+  attractionForce: 100
   damagePerSecond: 23.34
+  dieTime: 7
   forceMode: 0
