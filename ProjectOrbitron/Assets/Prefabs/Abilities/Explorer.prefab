@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5227868969267174466}
   - component: {fileID: 6511595778000673293}
   - component: {fileID: 8052362398990678601}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Explorer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,10 +125,10 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 90113
+    m_Bits: 614401
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 1740800
+    m_Bits: 1216512
   m_LayerOverridePriority: 1
   m_IsTrigger: 0
   m_ProvidesContacts: 0
