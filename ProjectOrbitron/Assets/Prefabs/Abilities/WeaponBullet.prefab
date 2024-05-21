@@ -108,7 +108,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 0.57
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2018660110231068346
 MonoBehaviour:
@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onDataUpdatedEventsPrivate: []
+  ignoreThis: {fileID: 0}
   match: 0
   id: 0
   loadTime: 0
@@ -130,6 +131,7 @@ MonoBehaviour:
   targets: []
   mode: 0
   signal: 0
+  contactPoint: {x: 0, y: 0, z: 0}
   onDataUpdatedEvents:
   - name: Enter
     statIndex: 0
@@ -205,6 +207,7 @@ MonoBehaviour:
   sender: {fileID: 0}
   rigidBody: {fileID: 3640657437192575298}
   receiver: []
+  contactPoint: {x: 0, y: 0, z: 0}
   damage: 7
 --- !u!54 &3640657437192575298
 Rigidbody:

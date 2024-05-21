@@ -1194,15 +1194,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4684931504687902, guid: cecba8cbb65991c42a1e7219f8210b9a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4684931504687902, guid: cecba8cbb65991c42a1e7219f8210b9a, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4684931504687902, guid: cecba8cbb65991c42a1e7219f8210b9a, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4684931504687902, guid: cecba8cbb65991c42a1e7219f8210b9a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1651,13 +1651,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3e45ab7123ec30478c41d3522f1cd6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 7012643340527828630}
-  Player: {fileID: 0}
-  isAlive: 1
-  anim: {fileID: 0}
-  currentSpeed: 0
+  navMeshAgent: {fileID: 7012643340527828630}
+  rBody: {fileID: 8708079117287804467}
+  target: {fileID: 0}
+  anim: {fileID: 7034189328452353230}
+  waveController: {fileID: 0}
   id_Attack: 0
-  damage: 0.1
+  startSpeed: 0
+  isAlive: 1
+  damageMod: 0.02
 --- !u!136 &1929230668626531903
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1707,7 +1709,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 2
 --- !u!114 &8578101706155986237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1793,3 +1795,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!95 &7034189328452353230 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95365556103937686, guid: cecba8cbb65991c42a1e7219f8210b9a, type: 3}
+  m_PrefabInstance: {fileID: 6975156197861032536}
+  m_PrefabAsset: {fileID: 0}

@@ -13,6 +13,7 @@ public class EnvironmentTarget : InteractableTarget
 
     private void Start()
     {
+        if (rigidBody == null) { rigidBody = GetComponent<Rigidbody>(); }
         stats[0].current = stats[0].max;
         onDataUpdatedEventsPrivate = onDataUpdatedEvents;
     }
